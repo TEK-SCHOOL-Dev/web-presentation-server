@@ -229,233 +229,421 @@ function Content() {
 
   return (
     <div>
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
-          height: 'calc(100% - 80px)',
-          overflow: 'hidden',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
-      >
+      {isLight ? (
         <Stack
-          component={m.div}
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
           sx={{
-            width: 350,
-            position: 'relative',
-            left: '30%',
-            mb: 30,
+            height: '100%',
+            overflow: 'hidden',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
           }}
         >
-          <Box
-            component={m.img}
-            alt={`hero_${isLight ? 'light' : 'dark'}_2`}
-            src={`/assets/images/home/rocket_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              top: '50%',
-              right: '50%',
-              transform: 'translate(50%, -50%)',
-              zIndex: 1,
-            }}
-          />
           <Stack
             component={m.div}
             sx={{
-              position: 'absolute',
-              top: '50%',
-              right: '50%',
-              transform: 'translate(50%, -50%)',
-              zIndex: 2,
+              width: 350,
+              position: 'relative',
+              left: '30%',
+              mb: 30,
+            }}
+          >
+            <Box
+              component={m.img}
+              alt={`hero_${isLight ? 'light' : 'dark'}_2`}
+              src={`/assets/images/home/rocket_${isLight ? 'light' : 'dark'}.png`}
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                right: '50%',
+                transform: 'translate(50%, -50%)',
+                zIndex: 1,
+              }}
+            />
+            <Stack
+              component={m.div}
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                right: '50%',
+                transform: 'translate(50%, -50%)',
+                zIndex: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src={`/assets/images/home/cloud_${isLight ? 'light' : 'dark'}.png`}
+                sx={{
+                  width: '100%',
+                  ml: 20,
+                  mt: 15,
+                }}
+              />
+            </Stack>
+            <Box
+              component={m.img}
+              alt={`cloud_${isLight ? 'light' : 'dark'}`}
+              src={`/assets/images/home/backCloud_${isLight ? 'light' : 'dark'}.png`}
+              sx={{
+                position: 'absolute',
+                width: '80%',
+                bottom: 70,
+                right: '90%',
+                transform: 'translateX(50%)',
+              }}
+            />
+            <Box
+              component={m.img}
+              alt={`cloud_${isLight ? 'light' : 'dark'}`}
+              src={`/assets/images/home/light-cloud-top-right_${isLight ? 'light' : 'dark'}.png`}
+              sx={{
+                position: 'absolute',
+                width: '50%',
+                bottom: 70,
+                left: '350px',
+                transform: 'translateX(50%)',
+              }}
+            />
+          </Stack>
+
+          <Stack
+            component={m.div}
+            sx={{
+              width: 350,
+              position: 'relative',
+              right: '35%',
+              mb: 30,
             }}
           >
             <Box
               component={m.img}
               alt={`cloud_${isLight ? 'light' : 'dark'}`}
-              src={`/assets/images/home/cloud_${isLight ? 'light' : 'dark'}.png`}
+              src={`/assets/images/home/cloudtopleft_${isLight ? 'light' : 'dark'}.png`}
               sx={{
-                width: '100%',
-                ml: 20,
-                mt: 15,
+                position: 'absolute',
+                width: '80%',
+                bottom: 70,
+                left: '67px',
+                transform: 'translateX(-50%)',
               }}
             />
           </Stack>
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/backCloud_${isLight ? 'light' : 'dark'}.png`}
+          <Stack
+            direction="row"
+            justifyContent="center"
             sx={{
               position: 'absolute',
-              width: '80%',
-              bottom: 70,
-              right: '90%',
-              transform: 'translateX(50%)',
-            }}
-          />
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/light-cloud-top-right_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '50%',
-              bottom: 70,
-              left: '350px',
-              transform: 'translateX(50%)',
-            }}
-          />
-        </Stack>
-
-        <Stack
-          component={m.div}
-          sx={{
-            width: 350,
-            position: 'relative',
-            right: '35%',
-            mb: 30,
-          }}
-        >
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/cloudtopleft_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '80%',
-              bottom: 70,
-              left: '67px',
-              transform: 'translateX(-50%)',
-            }}
-          />
-        </Stack>
-      </Stack>
-
-      <Stack
-        direction="row"
-        justifyContent="center"
-        sx={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-        }}
-      >
-        <Stack
-          component={m.div}
-          sx={{
-            width: 1150,
-            position: 'relative',
-            mb: 2,
-          }}
-        >
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/books_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '80%',
-              bottom: -20,
-              left: '1034px',
-              transform: 'translateX(-40%)',
-            }}
-          />
-        </Stack>
-
-        <Stack
-          component={m.div}
-          sx={{
-            width: 280,
-            position: 'absolute',
-            mb: 2,
-          }}
-        >
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/characterback_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '100%',
               bottom: 0,
-              left: '57px',
-              transform: 'translate(-320%, +25%)',
+              left: 0,
+              right: 0,
             }}
-          />
-        </Stack>
+          >
+            <Stack
+              component={m.div}
+              sx={{
+                width: 1150,
+                position: 'relative',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src={`/assets/images/home/books_${isLight ? 'light' : 'dark'}.png`}
+                sx={{
+                  position: 'absolute',
+                  width: '80%',
+                  bottom: -20,
+                  left: '1034px',
+                  transform: 'translateX(-40%)',
+                }}
+              />
+            </Stack>
 
-        <Stack
-          component={m.div}
-          sx={{
-            width: 250,
-            position: 'absolute',
-            mb: 2,
-          }}
-        >
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/cloudmidmountain_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              bottom: 0,
-              left: '57px',
-              transform: 'translate(-320%, +35%)',
-            }}
-          />
-        </Stack>
+            <Stack
+              component={m.div}
+              sx={{
+                width: 280,
+                position: 'absolute',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src={`/assets/images/home/characterback_${isLight ? 'light' : 'dark'}.png`}
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  bottom: 0,
+                  left: '57px',
+                  transform: 'translate(-320%, +25%)',
+                }}
+              />
+            </Stack>
 
-        <Stack
-          component={m.div}
-          sx={{
-            width: 250,
-            position: 'absolute',
-            mb: 2,
-          }}
-        >
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/cloudfrontmountain_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              bottom: 0,
-              left: '57px',
-              transform: 'translate(-190%, +10%)',
-              zIndex: 1,
-            }}
-          />
-        </Stack>
+            <Stack
+              component={m.div}
+              sx={{
+                width: 250,
+                position: 'absolute',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src={`/assets/images/home/cloudmidmountain_${isLight ? 'light' : 'dark'}.png`}
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  bottom: 0,
+                  left: '57px',
+                  transform: 'translate(-320%, +35%)',
+                }}
+              />
+            </Stack>
 
-        <Stack
-          component={m.div}
-          sx={{
-            width: 350,
-            position: 'absolute',
-            mb: 2,
-          }}
-        >
-          <Box
-            component={m.img}
-            alt={`cloud_${isLight ? 'light' : 'dark'}`}
-            src={`/assets/images/home/characterfront_${isLight ? 'light' : 'dark'}.png`}
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              bottom: 0,
-              left: '57px',
-              transform: 'translate(-180%, +30%)',
-            }}
-          />
+            <Stack
+              component={m.div}
+              sx={{
+                width: 250,
+                position: 'absolute',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src={`/assets/images/home/cloudfrontmountain_${isLight ? 'light' : 'dark'}.png`}
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  bottom: 0,
+                  left: '57px',
+                  transform: 'translate(-190%, +10%)',
+                  zIndex: 1,
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'absolute',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src={`/assets/images/home/characterfront_${isLight ? 'light' : 'dark'}.png`}
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  bottom: 0,
+                  left: '57px',
+                  transform: 'translate(-180%, +30%)',
+                }}
+              />
+            </Stack>
+          </Stack>
         </Stack>
-      </Stack>
+      ) : (
+        <div>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              height: '100%',
+              overflow: 'hidden',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+          >
+            <Box
+              component={m.img}
+              alt="overlay_image"
+              src="/assets/images/home/dark_stars.png"
+              sx={{
+                position: 'absolute',
+                width: '100%',
+                height: '70%',
+                top: 72,
+                left: 0,
+                zIndex: 0,
+              }}
+            />
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'relative',
+                left: '30%',
+                mb: 30,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`} // Removed curly braces
+                src="/assets/images/home/rocket_dark.png"
+                sx={{
+                  width: '100%',
+                  ml: 70,
+                  mt: 15,
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 1150,
+                position: 'relative',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src="/assets/images/home/books_dark.png"
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  bottom: '-480px',
+                  left: '1070px',
+                  transform: 'translateX(-40%)',
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'absolute',
+                mb: 2,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src="/assets/images/home/dark_character_bottom_left.png"
+                sx={{
+                  position: 'absolute',
+                  width: '70%',
+                  bottom: -350,
+                  left: '-50px',
+                  transform: 'translate(-180%, +30%)',
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'relative',
+                right: '35%',
+                mb: 30,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src="/assets/images/home/dark_character_top_left.png"
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  bottom: -50,
+                  left: -140,
+                  transform: 'translateX(-50%)',
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'relative',
+                right: '35%',
+                mb: 30,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src="/assets/images/home/dark_planet_top_left.png"
+                sx={{
+                  position: 'absolute',
+                  width: '30%',
+                  bottom: 185,
+                  left: '-200px',
+                  transform: 'translateX(-50%)',
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'relative',
+                right: '35%',
+                mb: 30,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src="/assets/images/home/dark_planet_top_right.png"
+                sx={{
+                  position: 'absolute',
+                  width: '70%',
+                  bottom: 130,
+                  left: '400px',
+                  transform: 'translateX(-50%)',
+                }}
+              />
+            </Stack>
+
+            <Stack
+              component={m.div}
+              sx={{
+                width: 350,
+                position: 'relative',
+                right: '35%',
+                mb: 30,
+              }}
+            >
+              <Box
+                component={m.img}
+                alt={`cloud_${isLight ? 'light' : 'dark'}`}
+                src="/assets/images/home/dark-light-bulb.png"
+                sx={{
+                  position: 'absolute',
+                  width: '20%',
+                  bottom: -170,
+                  left: '-580px',
+                  transform: 'translateX(-50%)',
+                }}
+              />
+            </Stack>
+          </Stack>
+        </div>
+      )}
     </div>
   );
 }
