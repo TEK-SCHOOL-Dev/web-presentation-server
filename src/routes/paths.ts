@@ -66,6 +66,9 @@ export const PATH_PAGE = {
   // Contact Us Pages
   faqNew: '/faq',
   scheduleTour: '/schedule-a-tour',
+
+  // Apply Now
+  applyNow: '/apply-now',
 };
 
 export const PATH_DASHBOARD = {

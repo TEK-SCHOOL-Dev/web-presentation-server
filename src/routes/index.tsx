@@ -53,6 +53,8 @@ import {
   // Contact US Pages
   FaqsPage,
   ScheduleTourPage,
+  // Apply Now
+  ApplyNowPage,
   //
   ComponentsOverviewPage,
   FoundationColorsPage,
@@ -176,6 +178,7 @@ export default function Router() {
         { path: 'social-impact', element: <SocialImpactPage /> },
         { path: 'faq', element: <FaqsPage /> },
         { path: 'schedule-a-tour', element: <ScheduleTourPage /> },
+        { path: 'apply-now', element: <ApplyNowPage /> },
         // Demo Components
         {
           path: 'components',

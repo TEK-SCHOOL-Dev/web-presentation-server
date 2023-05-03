@@ -64,6 +64,8 @@ export const SocialImpactPage = Loadable(lazy(() => import('../pages/SocialImpac
 
 // Contact Us pages
 export const ScheduleTourPage = Loadable(lazy(() => import('../pages/ScheduleTour')));
+// Apply Now pages
+export const ApplyNowPage = Loadable(lazy(() => import('../pages/ApplyNow')));
 
 // DEMO COMPONENTS
 // ----------------------------------------------------------------------

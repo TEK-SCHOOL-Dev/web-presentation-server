@@ -10,7 +10,7 @@ import { bgBlur } from '../../utils/cssStyles';
 // config
 import { HEADER } from '../../config-global';
 // routes
-import { PATH_AUTH, PATH_MINIMAL_ON_STORE } from '../../routes/paths';
+import { PATH_PAGE, PATH_AUTH } from '../../routes/paths';
 // components
 import Logo from '../../components/logo';
 import Label from '../../components/label';
@@ -53,21 +53,25 @@ export default function Header() {
         }}
       >
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
-          <Logo/>
+          <Logo />
 
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
-          <Button variant="contained" target="_blank" rel="noopener" href={PATH_MINIMAL_ON_STORE}>
+          <Button variant="contained" target="_blank" rel="noopener" href={PATH_PAGE.applyNow}>
             Apply Now
           </Button>
-          <Button  style = {{ marginLeft: '10px' }} variant="contained" rel="noopener" href={PATH_AUTH.loginUnprotected}>
+          <Button
+            style={{ marginLeft: '10px' }}
+            variant="contained"
+            rel="noopener"
+            href={PATH_AUTH.loginUnprotected}
+          >
             Login
           </Button>
-          
+
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
         </Container>
-
       </Toolbar>
       {isOffset && <Shadow />}
     </AppBar>
