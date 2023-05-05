@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { m, motion, useAnimation } from 'framer-motion';
 import { Box, Container, Grid, Typography } from '@mui/material';
 import { MotionContainer, TextAnimate, varFade } from '../../components/animate';
 import Image from '../../components/image';
@@ -48,6 +49,135 @@ export default function HomePic() {
         <Container component={MotionContainer}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
+              <Box sx={{ position: 'relative' }}>
+                <Image
+                  disabledEffect
+                  alt="grid"
+                  src="/assets/images/home/student-comm/layer_1.png"
+                />
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_5.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_6.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_7.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_8.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_9.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_10.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_11.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [-5, 10, -5] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_12.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
               <Box sx={{ textAlign: 'center' }}>
                 <TextAnimate
                   text="Student Community"
@@ -61,7 +191,7 @@ export default function HomePic() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                    theme.palette.mode === 'dark' ? 'common.white' : 'common.black', // Update the color property
+                      theme.palette.mode === 'dark' ? 'common.white' : 'common.black', // Update the color property
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,
@@ -78,16 +208,6 @@ export default function HomePic() {
                   </li>
                 </Typography>
               </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <SubSection>
-                <Image
-                  disabledEffect
-                  alt="hero"
-                  src="/assets/images/home/Student Community.png"
-                  sx={{ maxWidth: 400 }}
-                />
-              </SubSection>
             </Grid>
           </Grid>
         </Container>

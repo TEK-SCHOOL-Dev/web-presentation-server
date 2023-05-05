@@ -16,3 +16,4 @@ export { default as HomePic } from './HomePic';
 export { default as AboutWhat } from './AboutWhat';
 export { default as AboutVision } from './AboutVision';
 export { default as ProgramACourses } from './ProgramAndCourses';
+export { default as TeachingApprach } from './TeachingApproach';

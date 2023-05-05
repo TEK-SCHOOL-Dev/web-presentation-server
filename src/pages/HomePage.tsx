@@ -20,6 +20,7 @@ import {
   HomeAdvertisement,
   HomeCleanInterfaces,
   HomeHugePackElements,
+  TeachingApprach,
 } from '../sections/home';
 
 // ----------------------------------------------------------------------
@@ -82,7 +83,9 @@ export default function HomePage() {
 
         <AboutVision />
 
-        <HomeLookingFor />
+        <TeachingApprach />
+
+        {/* <HomeLookingFor /> */}
 
         <HomeAdvertisement />
       </Box>

@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Box, Container, Grid, Typography } from '@mui/material';
+import { m, motion, useAnimation } from 'framer-motion';
 import { MotionContainer, TextAnimate, varFade } from '../../components/animate';
 import Image from '../../components/image';
 
@@ -48,16 +49,6 @@ export default function HomePic() {
         <Container component={MotionContainer}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <SubSection>
-                <Image
-                  disabledEffect
-                  alt="hero"
-                  src="/assets/images/home/Impact.png"
-                  sx={{ maxWidth: 400 }}
-                />
-              </SubSection>
-            </Grid>
-            <Grid item xs={12} md={6}>
               <Box sx={{ textAlign: 'center' }}>
                 <TextAnimate
                   text="Stay Up-to-Date"
@@ -77,6 +68,71 @@ export default function HomePic() {
                 >
                   Stay up-to-date with our upcoming classes and enroll today.
                 </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ position: 'relative' }}>
+                <Image disabledEffect alt="grid" src="/assets/images/home/stay-up/layer_5.png" />
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_1.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_2.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_3.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_4.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
               </Box>
             </Grid>
           </Grid>
