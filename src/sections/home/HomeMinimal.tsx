@@ -61,26 +61,6 @@ export default function HomeMinimal() {
   return (
     <StyledRoot>
       <Container component={MotionViewport}>
-        <Stack
-          spacing={3}
-          sx={{
-            textAlign: 'center',
-            mb: { xs: 5, md: 10 },
-          }}
-        >
-          <m.div variants={varFade().inUp}>
-            <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-              <></>
-            </Typography>
-          </m.div>
-
-          <m.div variants={varFade().inDown}>
-            <Typography variant="h2">
-              <></>
-            </Typography>
-          </m.div>
-        </Stack>
-
         <Box
           gap={{ xs: 3, lg: 10 }}
           display="grid"
