@@ -1,7 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { m, motion, useAnimation } from 'framer-motion';
 import { MotionContainer, TextAnimate, varFade } from '../../components/animate';
+import Iconify from '../../components/iconify';
 
 import Image from '../../components/image';
 
@@ -13,6 +14,10 @@ const StyledRoot = styled('div')(({ theme }) => ({
 const Section = styled('section')(({ theme }) => ({
   paddingTop: theme.spacing(10),
   paddingBottom: theme.spacing(10),
+  minHeight: '100vh', // Add this line
+  display: 'flex', // Add this line
+  alignItems: 'center', // Add this line
+  justifyContent: 'center', // Add this line
   backgroundColor: theme.palette.background.default,
 }));
 
@@ -21,6 +26,7 @@ const SubSection = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   height: '100%',
+  width: '100%', // Add this line
   textAlign: 'center',
 }));
 
@@ -240,6 +246,23 @@ export default function ProgramsAndCourses() {
                     digital world.
                   </li>
                 </Typography>
+                <m.div
+                  variants={varFade().inRight}
+                  style={{
+                    display: 'flex', // Add this line to use Flexbox
+                    justifyContent: 'flex-end', // Add this line to align the button to the left
+                    marginTop: '1rem',
+                  }}
+                >
+                  <Button
+                    variant="outlined"
+                    color="inherit"
+                    size="large"
+                    endIcon={<Iconify icon="ic:round-arrow-right-alt" width={24} />}
+                  >
+                    Learn More
+                  </Button>
+                </m.div>
               </Box>
             </Grid>
           </Grid>
