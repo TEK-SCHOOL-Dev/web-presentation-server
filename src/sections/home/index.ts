@@ -15,3 +15,4 @@ export { default as HomeComponent } from './HomeComponent';
 export { default as HomePic } from './HomePic';
 export { default as AboutWhat } from './AboutWhat';
 export { default as AboutVision } from './AboutVision';
+export { default as ProgramACourses } from './ProgramAndCourses';

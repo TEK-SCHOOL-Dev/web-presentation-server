@@ -10,21 +10,22 @@ import { MotionViewport, varFade } from '../../components/animate';
 
 const CARDS = [
   {
-    icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Explore',
-    description:
-      'Explore our range of programs and courses, from coding bootcamps to professional development courses.',
-  },
-  {
-    icon: ' /assets/icons/home/ic_design.svg',
-    title: 'Programs & Courses',
+    icon: ' /assets/icons/home/Community icon.png',
+    title: 'Community',
     description:
       'Our programs and courses are designed to give you hands-on experience and prepare you for a successful career in the tech industry.',
   },
+
   {
-    icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Catalog',
+    icon: ' /assets/icons/home/Resources icon.png',
+    title: 'Resources',
     description: 'Check out our course catalog to find the program or course thats right for you.',
+  },
+  {
+    icon: ' /assets/icons/home/Programs icon.png',
+    title: 'Teaching Approach',
+    description:
+      'Explore our range of programs and courses, from coding bootcamps to professional development courses.',
   },
 ];
 
@@ -69,13 +70,13 @@ export default function HomeMinimal() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-              Programs and Courses
+              <></>
             </Typography>
           </m.div>
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              Programs and <br /> Courses!
+              <></>
             </Typography>
           </m.div>
         </Stack>
@@ -108,7 +109,7 @@ export default function HomeMinimal() {
                   <Image
                     src={card.icon}
                     alt={card.title}
-                    sx={{ mx: 'auto', width: 48, height: 48 }}
+                    sx={{ mx: 'auto', width: 80, height: 80 }}
                   />
 
                   <Typography variant="h5" sx={{ mt: 8, mb: 2 }}>
