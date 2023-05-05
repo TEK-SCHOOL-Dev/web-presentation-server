@@ -11,6 +11,7 @@ import {
   AboutWhat,
   AboutVision,
   HomeMinimal,
+  ProgramACourses,
   HomeDarkMode,
   HomeLookingFor,
   HomeForDesigner,
@@ -67,10 +68,18 @@ export default function HomePage() {
           bgcolor: 'background.default',
         }}
       >
+        {/* Programs & Courses home ch apters */}
+
+        <ProgramACourses />
+
         <HomeMinimal />
+
         <HomePic />
+
         <HomeComponent />
+
         <AboutWhat />
+
         <AboutVision />
 
         <HomeLookingFor />

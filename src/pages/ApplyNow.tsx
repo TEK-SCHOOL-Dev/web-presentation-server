@@ -11,7 +11,7 @@ export default function AboutPage() {
     <>
       <Box>
         <Helmet>
-          <title> Contact Us | TEKSchool</title>
+          <title> Apply Now | TEKSchool </title>
         </Helmet>
 
         <Container sx={{ pt: 15, pb: 10, position: 'relative' }}>

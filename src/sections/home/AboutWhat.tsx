@@ -41,6 +41,36 @@ export default function AboutWhat() {
     <StyledRoot>
       <Container component={MotionViewport}>
         <Grid container spacing={3}>
+          {isDesktop && (
+            <Grid item xs={12} md={6} lg={7} sx={{ pl: { md: 7 } }}>
+              <Grid container spacing={3} alignItems="flex-end">
+                <Grid item xs={6}>
+                  <m.div variants={varFade().inUp}>
+                    <Image
+                      alt="our office 1"
+                      src="/assets/images/home/Resources icon.png"
+                      ratio="3/4"
+                      sx={{
+                        borderRadius: 2,
+                        boxShadow: shadow,
+                      }}
+                    />
+                  </m.div>
+                </Grid>
+                <Grid item xs={6}>
+                  <m.div variants={varFade().inUp}>
+                    <Image
+                      alt="our office 2"
+                      src="/assets/images/home/Programs icon-1.png"
+                      ratio="1/1"
+                      sx={{ borderRadius: 2 }}
+                    />
+                  </m.div>
+                </Grid>
+              </Grid>
+            </Grid>
+          )}
+
           <Grid item xs={12} md={6} lg={5}>
             <m.div variants={varFade().inRight}>
               <Typography variant="h2" sx={{ mb: 3 }}>
@@ -79,36 +109,6 @@ export default function AboutWhat() {
               </Button>
             </m.div>
           </Grid>
-
-          {isDesktop && (
-            <Grid item xs={12} md={6} lg={7} sx={{ pl: { md: 7 } }}>
-              <Grid container spacing={3} alignItems="flex-end">
-                <Grid item xs={6}>
-                  <m.div variants={varFade().inUp}>
-                    <Image
-                      alt="our office 1"
-                      src="/assets/images/about/what_1.jpg"
-                      ratio="3/4"
-                      sx={{
-                        borderRadius: 2,
-                        boxShadow: shadow,
-                      }}
-                    />
-                  </m.div>
-                </Grid>
-                <Grid item xs={6}>
-                  <m.div variants={varFade().inUp}>
-                    <Image
-                      alt="our office 2"
-                      src="/assets/images/about/what_2.jpg"
-                      ratio="1/1"
-                      sx={{ borderRadius: 2 }}
-                    />
-                  </m.div>
-                </Grid>
-              </Grid>
-            </Grid>
-          )}
         </Grid>
       </Container>
     </StyledRoot>

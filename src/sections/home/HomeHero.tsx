@@ -210,7 +210,7 @@ export default function HomeHero() {
                           },
                         }}
                       >
-                        Live Preview
+                        Programs
                       </Button>
                     </Stack>
                     <Button
@@ -223,7 +223,7 @@ export default function HomeHero() {
                       href={PATH_FIGMA_PREVIEW}
                       sx={{ borderColor: 'text.primary' }}
                     >
-                      Design Preview
+                      Who we are!
                     </Button>
                   </Stack>
                 </m.div>

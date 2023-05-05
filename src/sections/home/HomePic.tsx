@@ -52,8 +52,8 @@ export default function HomePic() {
                 <Image
                   disabledEffect
                   alt="hero"
-                  src="/public/assets/illustrations/characters/character_7.png"
-                  sx={{ maxWidth: 320 }}
+                  src="/assets/images/home/Impact.png"
+                  sx={{ maxWidth: 400 }}
                 />
               </SubSection>
             </Grid>
@@ -70,7 +70,8 @@ export default function HomePic() {
                   variant="body1"
                   sx={{
                     mt: 2,
-                    color: 'common.black',
+                    color: (theme) =>
+                      theme.palette.mode === 'dark' ? 'common.white' : 'common.black', // Update the color property
                     fontWeight: 'fontWeightMedium',
                   }}
                 >

@@ -115,7 +115,7 @@ function Content() {
           visibleByDefault
           disabledEffect
           alt="rocket"
-          src="/assets/images/home/rocket.png"
+          src="/assets/images/home/Student Stories.png"
           sx={{ maxWidth: 460 }}
         />
       </m.div>
