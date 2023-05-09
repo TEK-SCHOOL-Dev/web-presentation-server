@@ -10,19 +10,19 @@ import { MotionViewport, varFade } from '../../components/animate';
 
 const CARDS = [
   {
-    icon: ' /assets/icons/home/Community icon.png',
+    icon: ' /assets/icons/home/community_dark.svg',
     title: 'Community',
     description:
       'Our programs and courses are designed to give you hands-on experience and prepare you for a successful career in the tech industry.',
   },
 
   {
-    icon: ' /assets/icons/home/Resources icon.png',
+    icon: ' /assets/icons/home/resources_dark.svg',
     title: 'Resources',
     description: 'Check out our course catalog to find the program or course thats right for you.',
   },
   {
-    icon: ' /assets/icons/home/Programs icon.png',
+    icon: ' /assets/icons/home/teaching-approach_dark.svg',
     title: 'Teaching Approach',
     description:
       'Explore our range of programs and courses, from coding bootcamps to professional development courses.',

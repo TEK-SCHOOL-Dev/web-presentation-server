@@ -30,48 +30,17 @@ const SubSection = styled(Box)(({ theme }) => ({
   textAlign: 'center',
 }));
 
-export default function TeachingApprach() {
+export default function OurImpact() {
   return (
     <StyledRoot>
       <Section>
         <Container component={MotionContainer}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <Box sx={{ position: 'relative', width: 650 }}>
-                <Image
-                  disabledEffect
-                  alt="grid"
-                  src="/assets/images/home/teach-appr/layer_1.png"
-                  sx={{ zIndex: 1 }}
-                />
-
-                {Array.from({ length: 7 }, (_, i) => (
-                  <Box key={i} sx={{ position: 'absolute', top: 0, zIndex: 0, width: 650 }}>
-                    <m.div variants={varFade().inDown}>
-                      <m.div
-                        animate={{
-                          y: [0, -15, 0],
-                          transform: ['rotate(0deg)', 'rotate(720deg)'],
-                        }}
-                        transition={{ duration: 25, repeat: Infinity }}
-                      >
-                        <Image
-                          disabledEffect
-                          alt="sidebar"
-                          src={`/assets/images/home/teach-appr/layer_${i + 2}.png`}
-                        />
-                      </m.div>
-                    </m.div>
-                  </Box>
-                ))}
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
               <Box sx={{ textAlign: 'center' }}>
                 <Box sx={{ display: 'inline-flex' }}>
                   <TextAnimate
-                    text="Teaching"
+                    text="Our "
                     sx={{
                       color: 'primary.main',
                     }}
@@ -86,7 +55,7 @@ export default function TeachingApprach() {
                     variants={varFade().inRight}
                   />
                   <TextAnimate
-                    text="Apprach!"
+                    text="Impact!"
                     sx={{
                       color: 'primary.main',
                     }}
@@ -103,12 +72,12 @@ export default function TeachingApprach() {
                     textAlign: 'left',
                     pl: 4,
                     '& li': {
-                      paddingBottom: 1,
+                      paddingBottom: 2,
                     },
                   }}
                 >
-                  We pride ourselves on our unique and practical teaching approach. Our focus is to
-                  ensure that our students receive:
+                  TEK SCHOOL is dedicated to making a difference in the lives of our students and
+                  the tech industry. Here are some of the ways we&apos;ve achieved this:
                 </Typography>
                 <Typography
                   component="ul"
@@ -120,22 +89,23 @@ export default function TeachingApprach() {
                     textAlign: 'left',
                     pl: 4,
                     '& li': {
-                      paddingBottom: 1,
+                      paddingBottom: 2,
                     },
                   }}
                 >
                   <li>
-                    Original Content: We provide students with comprehensive and up-to-date course
-                    materials created by our experienced instructors.
+                    Empowering Individuals: We have helped hundreds of students secure their dream
+                    jobs in the tech sector, enabling them to transform their lives.
                   </li>
                   <li>
-                    Real-World Application: Our curriculum emphasizes the practical use of tools and
-                    technologies, preparing students to tackle real-life challenges in the tech
-                    industry.
+                    Supporting Underrepresented Communities: A majority of our students come from
+                    communities that lack access to formal education, and we provide them with
+                    opportunities to excel in the tech industry.
                   </li>
                   <li>
-                    Job Readiness: We ensure that by the end of the course, students are equipped
-                    with the skills and knowledge needed to excel in their chosen career paths.
+                    Bringing Jobs Back: Our efforts have contributed to reclaiming a portion of
+                    high-paying tech jobs that were previously outsourced, benefiting the US
+                    economy.
                   </li>
                 </Typography>
                 <Typography
@@ -152,14 +122,13 @@ export default function TeachingApprach() {
                     },
                   }}
                 >
-                  Discover how our teaching approach sets us apart by exploring our Teaching
-                  Approach Page.
+                  Learn more about the impact we&apos;re making by visiting Our Story page.
                 </Typography>
                 <m.div
                   variants={varFade().inRight}
                   style={{
                     display: 'flex', // Add this line to use Flexbox
-                    justifyContent: 'flex-end', // Add this line to align the button to the left
+                    justifyContent: 'flex-start', // Add this line to align the button to the left
                     marginTop: '1rem',
                   }}
                 >
@@ -169,9 +138,88 @@ export default function TeachingApprach() {
                     size="large"
                     endIcon={<Iconify icon="ic:round-arrow-right-alt" width={24} />}
                   >
-                    Learn More
+                    Our Story
                   </Button>
                 </m.div>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ position: 'relative ', zIndex: 0 }}>
+                <Image disabledEffect alt="grid" src="/assets/images/home/stay-up/layer_5.png" />
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_1.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ x: [25, -25, 25] }}
+                      transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse' }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_2.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -35, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_3.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_4.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+                <Box sx={{ position: 'absolute', top: -20, zIndex: -1 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/stay-up/layer_6.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
               </Box>
             </Grid>
           </Grid>

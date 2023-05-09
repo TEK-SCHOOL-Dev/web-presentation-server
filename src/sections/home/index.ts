@@ -1,5 +1,6 @@
 import ComponentHero from './HomeComponent';
 import AboutVision from './AboutVision';
+import Resources from './AboutWhat';
 
 export { default as HomeHero } from './HomeHero';
 export { default as HomeMinimal } from './HomeMinimal';
@@ -12,8 +13,8 @@ export { default as HomeAdvertisement } from './HomeAdvertisement';
 export { default as HomeCleanInterfaces } from './HomeCleanInterfaces';
 export { default as HomeHugePackElements } from './HomeHugePackElements';
 export { default as HomeComponent } from './HomeComponent';
-export { default as HomePic } from './HomePic';
-export { default as AboutWhat } from './AboutWhat';
+export { default as Impact } from './OurImpact';
+export { default as Resources } from './AboutWhat';
 export { default as AboutVision } from './AboutVision';
 export { default as ProgramACourses } from './ProgramAndCourses';
 export { default as TeachingApprach } from './TeachingApproach';

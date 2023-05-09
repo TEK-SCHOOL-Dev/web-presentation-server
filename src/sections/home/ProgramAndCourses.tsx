@@ -207,7 +207,7 @@ export default function ProgramsAndCourses() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                      theme.palette.mode === 'dark' ? 'common.white' : 'common.black', // Update the color property
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,
@@ -224,7 +224,7 @@ export default function ProgramsAndCourses() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                      theme.palette.mode === 'dark' ? 'common.white' : 'common.black', // Update the color property
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,
