@@ -1,116 +1,135 @@
-import { m } from 'framer-motion';
-// @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Button, Container, Typography, LinearProgress } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// utils
-import { fPercent } from '../../utils/formatNumber';
-// _mock_
-import { _skills } from '../../_mock/arrays';
-// components
-import Image from '../../components/image';
+import { styled } from '@mui/material/styles';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import { m, motion, useAnimation } from 'framer-motion';
+import { MotionContainer, TextAnimate, varFade } from '../../components/animate';
 import Iconify from '../../components/iconify';
-import { MotionViewport, varFade } from '../../components/animate';
 
-// ----------------------------------------------------------------------
+import Image from '../../components/image';
+
 const StyledRoot = styled('div')(({ theme }) => ({
-  textAlign: 'center',
-  paddingTop: theme.spacing(20),
-  paddingBottom: theme.spacing(10),
-  [theme.breakpoints.up('md')]: {
-    textAlign: 'left',
-  },
+  backgroundColor:
+    theme.palette.mode === 'dark' ? theme.palette.background.default : theme.palette.common.white,
 }));
 
-// ----------------------------------------------------------------------
+const Section = styled('section')(({ theme }) => ({
+  paddingTop: theme.spacing(10),
+  paddingBottom: theme.spacing(10),
+  minHeight: '100vh', // Add this line
+  display: 'flex', // Add this line
+  alignItems: 'center', // Add this line
+  justifyContent: 'center', // Add this line
+  backgroundColor: theme.palette.background.default,
+}));
 
-export default function AboutWhat() {
-  const theme = useTheme();
+const SubSection = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+  width: '100%', // Add this line
+  textAlign: 'center',
+}));
 
-  const isDesktop = useResponsive('up', 'md');
-
-  const isLight = theme.palette.mode === 'light';
-
-  const shadow = `-40px 40px 80px ${alpha(
-    isLight ? theme.palette.grey[500] : theme.palette.common.black,
-    0.48
-  )}`;
-
+export default function Resources() {
   return (
     <StyledRoot>
-      <Container component={MotionViewport}>
-        <Grid container spacing={3}>
-          {isDesktop && (
-            <Grid item xs={12} md={6} lg={7} sx={{ pl: { md: 7 } }}>
-              <Grid container spacing={3} alignItems="flex-end">
-                <Grid item xs={6}>
-                  <m.div variants={varFade().inUp}>
-                    <Image
-                      alt="our office 1"
-                      src="/assets/images/home/Resources icon.png"
-                      ratio="3/4"
-                      sx={{
-                        borderRadius: 2,
-                        boxShadow: shadow,
-                      }}
-                    />
-                  </m.div>
-                </Grid>
-                <Grid item xs={6}>
-                  <m.div variants={varFade().inUp}>
-                    <Image
-                      alt="our office 2"
-                      src="/assets/images/home/Programs icon-1.png"
-                      ratio="1/1"
-                      sx={{ borderRadius: 2 }}
-                    />
-                  </m.div>
-                </Grid>
-              </Grid>
-            </Grid>
-          )}
-
-          <Grid item xs={12} md={6} lg={5}>
-            <m.div variants={varFade().inRight}>
-              <Typography variant="h2" sx={{ mb: 3 }}>
-                Resources
-              </Typography>
-            </m.div>
-
-            <m.div variants={varFade().inRight}>
-              <Typography
-                sx={{
-                  color: theme.palette.mode === 'light' ? 'text.secondary' : 'common.white',
-                }}
-              >
-                <ul style={{ fontSize: '1.1rem', lineHeight: '2.5rem' }}>
+      <Section>
+        <Container component={MotionContainer}>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ textAlign: 'center' }}>
+                <Box sx={{ display: 'inline-flex' }}>
+                  <TextAnimate
+                    text="Resources"
+                    sx={{
+                      color: 'primary.main',
+                    }}
+                    variants={varFade().inRight}
+                  />
+                </Box>
+                <Typography
+                  component="ul"
+                  sx={{
+                    mt: 4,
+                    color: (theme) =>
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
+                    fontWeight: 'fontWeightMedium',
+                    textAlign: 'left',
+                    pl: 4,
+                    '& li': {
+                      paddingBottom: 2,
+                    },
+                  }}
+                >
                   <li>
                     Discover our range of resources, including learning resources, career resources,
                     and community forums.
                   </li>
                   <li>We provide the tools and support you need to succeed in your tech career.</li>
                   <li>
-                    Check out our certification verification page to showcase your skills to
-                    potential employers.
+                    Check out our certification verification page to showcase your skills
+                    topotential employers.
                   </li>
-                </ul>
-              </Typography>
-            </m.div>
+                </Typography>
+                <m.div
+                  variants={varFade().inRight}
+                  style={{
+                    display: 'flex', // Add this line to use Flexbox
+                    justifyContent: 'flex-start', // Add this line to align the button to the left
+                    marginTop: '1rem',
+                  }}
+                >
+                  <Button
+                    variant="outlined"
+                    color="inherit"
+                    size="large"
+                    endIcon={<Iconify icon="ic:round-arrow-right-alt" width={24} />}
+                  >
+                    Learn More
+                  </Button>
+                </m.div>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ position: 'relative' }}>
+                <Image disabledEffect alt="grid" src="/assets/images/home/resources/layer_1.png" />
 
-            <m.div variants={varFade().inRight} style={{ marginTop: '1rem' }}>
-              <Button
-                variant="outlined"
-                color="inherit"
-                size="large"
-                endIcon={<Iconify icon="ic:round-arrow-right-alt" width={24} />}
-              >
-                Check out our work
-              </Button>
-            </m.div>
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/resources/layer_2.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/resources/layer_3.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Section>
     </StyledRoot>
   );
 }

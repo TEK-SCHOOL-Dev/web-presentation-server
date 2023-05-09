@@ -12,6 +12,10 @@ const StyledRoot = styled('div')(({ theme }) => ({
 const Section = styled('section')(({ theme }) => ({
   paddingTop: theme.spacing(10),
   paddingBottom: theme.spacing(10),
+  minHeight: '100vh', // Add this line
+  display: 'flex', // Add this line
+  alignItems: 'center', // Add this line
+  justifyContent: 'center', // Add this line
   backgroundColor: theme.palette.background.default,
 }));
 
@@ -20,6 +24,7 @@ const SubSection = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   height: '100%',
+  width: '100%', // Add this line
   textAlign: 'center',
 }));
 
@@ -65,13 +70,58 @@ export default function HomePic() {
                       <Image
                         disabledEffect
                         alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_5.png"
+                        src="/assets/images/home/student-comm/layer_2.png"
                       />
                     </m.div>
                   </m.div>
                 </Box>
 
                 <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_3.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_4.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: 0 }}>
+                  <m.div variants={varFade().inDown}>
+                    <m.div
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    >
+                      <Image
+                        disabledEffect
+                        alt="sidebar"
+                        src="/assets/images/home/student-comm/layer_5.png"
+                      />
+                    </m.div>
+                  </m.div>
+                </Box>
+
+                <Box sx={{ position: 'absolute', top: -70 }}>
                   <m.div variants={varFade().inDown}>
                     <m.div
                       animate={{ y: [0, -15, 0] }}
@@ -81,96 +131,6 @@ export default function HomePic() {
                         disabledEffect
                         alt="sidebar"
                         src="/assets/images/home/student-comm/layer_6.png"
-                      />
-                    </m.div>
-                  </m.div>
-                </Box>
-
-                <Box sx={{ position: 'absolute', top: 0 }}>
-                  <m.div variants={varFade().inDown}>
-                    <m.div
-                      animate={{ y: [0, -15, 0] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <Image
-                        disabledEffect
-                        alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_7.png"
-                      />
-                    </m.div>
-                  </m.div>
-                </Box>
-
-                <Box sx={{ position: 'absolute', top: 0 }}>
-                  <m.div variants={varFade().inDown}>
-                    <m.div
-                      animate={{ y: [0, -15, 0] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <Image
-                        disabledEffect
-                        alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_8.png"
-                      />
-                    </m.div>
-                  </m.div>
-                </Box>
-
-                <Box sx={{ position: 'absolute', top: 0 }}>
-                  <m.div variants={varFade().inDown}>
-                    <m.div
-                      animate={{ y: [0, -15, 0] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <Image
-                        disabledEffect
-                        alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_9.png"
-                      />
-                    </m.div>
-                  </m.div>
-                </Box>
-
-                <Box sx={{ position: 'absolute', top: 0 }}>
-                  <m.div variants={varFade().inDown}>
-                    <m.div
-                      animate={{ y: [0, -15, 0] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <Image
-                        disabledEffect
-                        alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_10.png"
-                      />
-                    </m.div>
-                  </m.div>
-                </Box>
-
-                <Box sx={{ position: 'absolute', top: 0 }}>
-                  <m.div variants={varFade().inDown}>
-                    <m.div
-                      animate={{ y: [0, -15, 0] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <Image
-                        disabledEffect
-                        alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_11.png"
-                      />
-                    </m.div>
-                  </m.div>
-                </Box>
-
-                <Box sx={{ position: 'absolute', top: 0 }}>
-                  <m.div variants={varFade().inDown}>
-                    <m.div
-                      animate={{ y: [-5, 10, -5] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <Image
-                        disabledEffect
-                        alt="sidebar"
-                        src="/assets/images/home/student-comm/layer_12.png"
                       />
                     </m.div>
                   </m.div>
@@ -191,7 +151,7 @@ export default function HomePic() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                      theme.palette.mode === 'dark' ? 'common.white' : 'common.black', // Update the color property
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,

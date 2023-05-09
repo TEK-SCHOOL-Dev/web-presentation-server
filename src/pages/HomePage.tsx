@@ -6,9 +6,9 @@ import { Box } from '@mui/material';
 // sections
 import {
   HomeHero,
-  HomePic,
+  Impact,
   HomeComponent,
-  AboutWhat,
+  Resources,
   AboutVision,
   HomeMinimal,
   ProgramACourses,
@@ -75,15 +75,15 @@ export default function HomePage() {
 
         <HomeMinimal />
 
-        <HomePic />
+        <Impact />
 
         <HomeComponent />
 
-        <AboutWhat />
-
-        <AboutVision />
+        <Resources />
 
         <TeachingApprach />
+
+        <AboutVision />
 
         {/* <HomeLookingFor /> */}
 
