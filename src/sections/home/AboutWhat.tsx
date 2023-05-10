@@ -30,10 +30,14 @@ const SubSection = styled(Box)(({ theme }) => ({
   textAlign: 'center',
 }));
 
-export default function Resources() {
+interface Resource {
+  id: string;
+}
+
+export default function Resources({ id }: Resource) {
   return (
     <StyledRoot>
-      <Section>
+      <Section id={id}>
         <Container component={MotionContainer}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
@@ -123,8 +127,6 @@ export default function Resources() {
                     </m.div>
                   </m.div>
                 </Box>
-
-
               </Box>
             </Grid>
           </Grid>

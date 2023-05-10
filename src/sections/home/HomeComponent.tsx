@@ -47,10 +47,14 @@ const StyledCard = styled(Box)(({ theme }) => ({
   boxShadow: `0px 4px 20px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.25)`,
 }));
 
-export default function HomePic() {
+interface StudentComunity {
+  id: string;
+}
+
+export default function HomePic({ id }: StudentComunity) {
   return (
     <StyledRoot>
-      <Section>
+      <Section id={id}>
         <Container component={MotionContainer}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>

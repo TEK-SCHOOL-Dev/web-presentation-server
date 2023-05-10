@@ -13,6 +13,7 @@ export interface LogoProps extends BoxProps {
 const Logo = forwardRef<HTMLDivElement, LogoProps>(
   ({ disabledLink = false, sx, ...other }, ref) => {
     const theme = useTheme();
+    const isLight = theme.palette.mode === 'light';
 
     const PRIMARY_LIGHT = theme.palette.primary.light;
 
@@ -24,7 +25,7 @@ const Logo = forwardRef<HTMLDivElement, LogoProps>(
     const logo = (
       <Box
         component="img"
-        src="/logo/logo_single.png"
+        src={`/logo/tekschool_${isLight ? 'light' : 'dark'}.svg`}
         sx={{ width: 220, height: 40, cursor: 'pointer', ...sx }}
       />
     );
