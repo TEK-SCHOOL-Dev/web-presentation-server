@@ -14,26 +14,21 @@ const StyledRoot = styled('div')(({ theme }) => ({
 const Section = styled('section')(({ theme }) => ({
   paddingTop: theme.spacing(10),
   paddingBottom: theme.spacing(10),
-  minHeight: '100vh', // Add this line
-  display: 'flex', // Add this line
-  alignItems: 'center', // Add this line
-  justifyContent: 'center', // Add this line
-  backgroundColor: theme.palette.background.default,
-}));
-
-const SubSection = styled(Box)(({ theme }) => ({
+  minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%',
-  width: '100%', // Add this line
-  textAlign: 'center',
+  backgroundColor: theme.palette.background.default,
 }));
 
-export default function TeachingApprach() {
+interface TeachingApprachProps {
+  id: string;
+}
+
+export default function TeachingApprach({ id }: TeachingApprachProps) {
   return (
     <StyledRoot>
-      <Section>
+      <Section id={id}>
         <Container component={MotionContainer}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
@@ -98,7 +93,7 @@ export default function TeachingApprach() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white',
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,
@@ -115,7 +110,7 @@ export default function TeachingApprach() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white',
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,
@@ -143,7 +138,7 @@ export default function TeachingApprach() {
                   sx={{
                     mt: 4,
                     color: (theme) =>
-                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white', // Update the color property
+                      theme.palette.mode === 'light' ? 'text.secondary' : 'common.white',
                     fontWeight: 'fontWeightMedium',
                     textAlign: 'left',
                     pl: 4,
@@ -158,8 +153,8 @@ export default function TeachingApprach() {
                 <m.div
                   variants={varFade().inRight}
                   style={{
-                    display: 'flex', // Add this line to use Flexbox
-                    justifyContent: 'flex-end', // Add this line to align the button to the left
+                    display: 'flex',
+                    justifyContent: 'flex-end',
                     marginTop: '1rem',
                   }}
                 >

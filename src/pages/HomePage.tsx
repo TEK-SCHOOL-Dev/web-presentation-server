@@ -55,7 +55,7 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title> The starting of your new jounry | TekSchool </title>
+        <title> The starting of your new journey | TekSchool </title>
       </Helmet>
 
       {progress}
@@ -69,7 +69,7 @@ export default function HomePage() {
           bgcolor: 'background.default',
         }}
       >
-        {/* Programs & Courses home ch apters */}
+        {/* Programs & Courses home chapters */}
 
         <ProgramACourses />
 
@@ -77,11 +77,11 @@ export default function HomePage() {
 
         <Impact />
 
-        <HomeComponent />
+        <HomeComponent id="StudentComunity" />
 
-        <Resources />
+        <Resources id="Resource" />
 
-        <TeachingApprach />
+        <TeachingApprach id="teachingApproach" />
 
         <AboutVision />
 

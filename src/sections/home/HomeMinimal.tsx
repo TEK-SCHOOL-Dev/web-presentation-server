@@ -1,7 +1,9 @@
+import { Link as ScrollLink } from 'react-scroll';
 import { m } from 'framer-motion';
 // @mui
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Card, Container, Typography, Stack, ButtonBase } from '@mui/material';
+import { Box, Card, Container, Typography, Stack, ButtonBase, useTheme } from '@mui/material';
+
 // components
 import Image from '../../components/image';
 import { MotionViewport, varFade } from '../../components/animate';
@@ -10,22 +12,26 @@ import { MotionViewport, varFade } from '../../components/animate';
 
 const CARDS = [
   {
-    icon: ' /assets/icons/home/community_dark.svg',
+    icon: (isLight: boolean) => `/assets/icons/home/community_${isLight ? 'light' : 'dark'}.svg`,
     title: 'Community',
     description:
       'Our programs and courses are designed to give you hands-on experience and prepare you for a successful career in the tech industry.',
+    link: 'StudentComunity',
   },
 
   {
-    icon: ' /assets/icons/home/resources_dark.svg',
+    icon: (isLight: boolean) => `/assets/icons/home/resources_${isLight ? 'light' : 'dark'}.svg`,
     title: 'Resources',
     description: 'Check out our course catalog to find the program or course thats right for you.',
+    link: 'Resource',
   },
   {
-    icon: ' /assets/icons/home/teaching-approach_dark.svg',
+    icon: (isLight: boolean) =>
+      `/assets/icons/home/teaching-approach_${isLight ? 'light' : 'dark'}.svg`,
     title: 'Teaching Approach',
     description:
       'Explore our range of programs and courses, from coding bootcamps to professional development courses.',
+    link: 'teachingApproach',
   },
 ];
 
@@ -58,6 +64,9 @@ const StyledCard = styled(Card)(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function HomeMinimal() {
+  const theme = useTheme();
+  const isLight = theme.palette.mode === 'light';
+
   return (
     <StyledRoot>
       <Container component={MotionViewport}>
@@ -72,22 +81,28 @@ export default function HomeMinimal() {
         >
           {CARDS.map((card, index) => (
             <m.div variants={varFade().inUp} key={card.title}>
-              <ButtonBase onClick={() => console.log(`Clicked ${card.title}`)}>
+              <ScrollLink
+                to={card.link || ''}
+                smooth
+                duration={500}
+                onClick={() => console.log(`Clicked ${card.title}`)}
+              >
                 <StyledCard
                   sx={{
                     ...(index === 1 && {
-                      boxShadow: (theme) => ({
+                      boxShadow: () => ({
                         md: `-40px 40px 80px ${
                           theme.palette.mode === 'light'
                             ? alpha(theme.palette.grey[500], 0.16)
                             : alpha(theme.palette.common.black, 0.4)
+                        }
                         }`,
                       }),
                     }),
                   }}
                 >
                   <Image
-                    src={card.icon}
+                    src={card.icon(isLight)}
                     alt={card.title}
                     sx={{ mx: 'auto', width: 80, height: 80 }}
                   />
@@ -98,7 +113,7 @@ export default function HomeMinimal() {
 
                   <Typography sx={{ color: 'text.secondary' }}>{card.description}</Typography>
                 </StyledCard>
-              </ButtonBase>
+              </ScrollLink>
             </m.div>
           ))}
         </Box>
