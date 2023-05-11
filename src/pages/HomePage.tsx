@@ -1,9 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { m, useScroll, useSpring } from 'framer-motion';
-// @mui
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
-// sections
+import { Link, animateScroll as scroll } from 'react-scroll';
 import {
   HomeHero,
   Impact,
@@ -52,6 +51,10 @@ export default function HomePage() {
     />
   );
 
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <Helmet>
@@ -71,23 +74,63 @@ export default function HomePage() {
       >
         {/* Programs & Courses home chapters */}
 
-        <ProgramACourses />
+        <Link to="ProgramACourses" spy smooth duration={500} offset={-50}>
+          <ProgramACourses />
+        </Link>
 
-        <HomeMinimal />
+        <Link to="HomeMinimal" spy smooth duration={500} offset={-50}>
+          <HomeMinimal />
+        </Link>
 
-        <Impact />
+        <Link to="Impact" spy smooth  duration={500} offset={-50}>
+          <Impact />
+        </Link>
 
-        <HomeComponent id="StudentComunity" />
+        <Link to="StudentComunity" spy smooth duration={500} offset={-50}>
+          <HomeComponent id="StudentComunity" />
+        </Link>
 
-        <Resources id="Resource" />
+        <Link to="Resource" spy smooth duration={500} offset={-50}>
+          <Resources id="Resource" />
+        </Link>
 
-        <TeachingApprach id="teachingApproach" />
+        <Link to="teachingApproach" spy smooth duration={500} offset={-50}>
+          <TeachingApprach id="teachingApproach" />
+          
+        </Link>
 
-        <AboutVision />
+        <Link to="AboutVision" spy smooth duration={500} offset={-50}>
+          <AboutVision />
+        </Link>
 
-        {/* <HomeLookingFor /> */}
-
-        <HomeAdvertisement />
+        <Link to="HomeAdvertisement" spy smooth duration={500} offset={-50}>
+          <HomeAdvertisement />
+        </Link>
+      </Box>
+      {/* Add a button to scroll back to the top */}
+      <Box
+        sx={{
+          position: 'fixed',
+          bottom: 16,
+          right: 16,
+          zIndex: 2000,
+          cursor: 'pointer',
+        }}
+        onClick={scrollToTop}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke={theme.palette.primary.main}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
       </Box>
     </>
   );
