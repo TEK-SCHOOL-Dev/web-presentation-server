@@ -30,6 +30,7 @@ import {
   MaintenancePage,
   //
   UpcommingClassesPage,
+  CourseCatalogPage,
   EnrollmentRequirmentPage,
   EnrollmentProcessPage,
   FinancialAidPrograms,
@@ -158,6 +159,7 @@ export default function Router() {
         { path: 'about-us', element: <AboutPage /> },
         { path: 'contact-us', element: <Contact /> },
         { path: 'upcomming-classes', element: <UpcommingClassesPage /> },
+        { path: 'course-catalog', element: <CourseCatalogPage /> },
         { path: 'enrollment-requirements', element: <EnrollmentRequirmentPage /> },
         { path: 'enrollment-process', element: <EnrollmentProcessPage /> },
         { path: 'financial-aid-programs', element: <FinancialAidPrograms /> },

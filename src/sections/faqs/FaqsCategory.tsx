@@ -53,6 +53,16 @@ const CATEGORIES = [
     icon: '/assets/icons/faqs/ic_assurances.svg',
     href: '#',
   },
+  {
+    label: 'Return & Refund',
+    icon: '/assets/icons/faqs/ic_refund.svg',
+    href: '#',
+  },
+  {
+    label: 'Guarantees and assurances',
+    icon: '/assets/icons/faqs/ic_assurances.svg',
+    href: '#',
+  },
 ];
 
 // ----------------------------------------------------------------------
@@ -100,11 +110,11 @@ export default function FaqsCategory() {
   return (
     <Box
       component={MotionViewport}
-      gap={2.5}
+      gap={1.5}
       display="grid"
       gridTemplateColumns={{
         md: 'repeat(3, 1fr)',
-        lg: 'repeat(6, 1fr)',
+        lg: 'repeat(8, 1fr)',
       }}
       sx={{ mb: 15 }}
     >

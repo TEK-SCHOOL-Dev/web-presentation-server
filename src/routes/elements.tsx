@@ -33,6 +33,7 @@ export const MaintenancePage = Loadable(lazy(() => import('../pages/MaintenanceP
 
 // New Pages
 export const UpcommingClassesPage = Loadable(lazy(() => import('../pages/UpcommingClasses')));
+export const CourseCatalogPage = Loadable(lazy(() => import('../pages/CourseCatalog')));
 
 // Admission Pages
 export const EnrollmentRequirmentPage = Loadable(

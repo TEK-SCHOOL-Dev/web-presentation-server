@@ -40,6 +40,7 @@ export const PATH_PAGE = {
   page500: '/500',
   components: '/components',
   upcommingClasses: '/upcomming-classes',
+  courseCatalog: 'course-catalog',
   enrollmentRequirements: '/enrollment-requirements',
   enrollmentProcess: '/enrollment-process',
   financialAidPrograms: '/financial-aid-programs',
