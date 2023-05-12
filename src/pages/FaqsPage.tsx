@@ -13,9 +13,10 @@ export default function FaqsPage() {
         <title> Faqs | TEk School </title>
       </Helmet>
 
-      <FaqsHero />
+      {/* <FaqsHero /> */}
 
       <Container sx={{ pt: 15, pb: 10, position: 'relative' }}>
+        
         <FaqsCategory />
 
         <Typography variant="h3" sx={{ mb: 5 }}>

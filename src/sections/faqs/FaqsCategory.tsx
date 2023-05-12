@@ -55,12 +55,12 @@ const CATEGORIES = [
   },
   {
     label: 'Return & Refund',
-    icon: '/assets/icons/faqs/ic_refund.svg',
+    icon: '/assets/icons/faqs/ic_something1.svg',
     href: '#',
   },
   {
     label: 'Guarantees and assurances',
-    icon: '/assets/icons/faqs/ic_assurances.svg',
+    icon: '/assets/icons/faqs/ic_something2.svg',
     href: '#',
   },
 ];
