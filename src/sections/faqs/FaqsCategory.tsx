@@ -11,6 +11,7 @@ import {
   Toolbar,
   Divider,
   ListItemButton,
+  ButtonBase,
 } from '@mui/material';
 // hooks
 import useResponsive from '../../hooks/useResponsive';
@@ -24,43 +25,33 @@ import { MotionViewport, varFade } from '../../components/animate';
 
 const CATEGORIES = [
   {
-    label: 'Managing your account',
-    icon: '/assets/icons/faqs/ic_account.svg',
+    label: 'Academics',
+    icon: '/assets/icons/faqs/ic_academics.svg',
     href: '#',
   },
   {
-    label: 'Payment',
-    icon: '/assets/icons/faqs/ic_payment.svg',
+    label: 'Admissions',
+    icon: '/assets/icons/faqs/ic_admissions.svg',
     href: '#',
   },
   {
-    label: 'Delivery',
-    icon: '/assets/icons/faqs/ic_delivery.svg',
+    label: 'Finances',
+    icon: '/assets/icons/faqs/ic_finances.svg',
     href: '#',
   },
   {
-    label: 'Problem with the Product',
-    icon: '/assets/icons/faqs/ic_package.svg',
+    label: 'Teaching & Learning',
+    icon: '/assets/icons/faqs/ic_teaching_learning.svg',
     href: '#',
   },
   {
-    label: 'Return & Refund',
-    icon: '/assets/icons/faqs/ic_refund.svg',
+    label: 'Student Life',
+    icon: '/assets/icons/faqs/ic_student_life.svg',
     href: '#',
   },
   {
-    label: 'Guarantees and assurances',
-    icon: '/assets/icons/faqs/ic_assurances.svg',
-    href: '#',
-  },
-  {
-    label: 'Return & Refund',
-    icon: '/assets/icons/faqs/ic_something1.svg',
-    href: '#',
-  },
-  {
-    label: 'Guarantees and assurances',
-    icon: '/assets/icons/faqs/ic_something2.svg',
+    label: 'Career Services',
+    icon: '/assets/icons/faqs/ic_career.svg',
     href: '#',
   },
 ];
@@ -113,13 +104,15 @@ export default function FaqsCategory() {
       gap={1.5}
       display="grid"
       gridTemplateColumns={{
-        md: 'repeat(3, 1fr)',
-        lg: 'repeat(8, 1fr)',
+        xs: 'repeat(1, 1fr)', // For mobile screens, show 1 card per row
+        sm: 'repeat(3, 1fr)', // For small screens, show 3 cards per row
+        md: 'repeat(3, 1fr)', // For medium screens, show 3 cards per row
+        lg: 'repeat(6, 1fr)', // For large screens, show 6 cards per row
       }}
-      sx={{ mb: 15 }}
+      sx={{ mb: 15, width: '100%' }}
     >
       {CATEGORIES.map((category) => (
-        <m.div key={category.label} variants={varFade().in}>
+        <m.div key={category.label} variants={varFade().inDown}>
           <CardDesktop category={category} />
         </m.div>
       ))}
@@ -139,31 +132,90 @@ type CardProps = {
 function CardDesktop({ category }: CardProps) {
   const { label, icon } = category;
 
-  return (
-    <Paper
-      variant="outlined"
-      sx={{
-        px: 3,
-        py: 5,
-        borderRadius: 2,
-        textAlign: 'center',
-        borderColor: (theme) => alpha(theme.palette.grey[500], 0.12),
-        '&:hover': {
-          boxShadow: (theme) => theme.customShadows.z24,
-        },
-      }}
-    >
-      <Image
-        disabledEffect
-        alt={icon}
-        src={icon}
-        sx={{ mb: 2, width: 80, height: 80, mx: 'auto' }}
-      />
+  const cardVariant = {
+    initial: {
+      scale: 0.7,
+      y: 50,
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+    hover: {
+      scale: 1.1,
+      y: -10,
+      boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    exit: {
+      scale: 0,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
 
-      <TextMaxLine variant="subtitle2" persistent>
-        {label}
-      </TextMaxLine>
-    </Paper>
+  const handleClick = () => {
+    // Define what should happen when a card is clicked
+    console.log(`Clicked on ${label}`);
+  };
+
+  return (
+    <m.div
+      initial="initial"
+      animate="animate"
+      whileHover="hover"
+      exit="exit"
+      variants={cardVariant}
+    >
+      <ButtonBase
+        onClick={handleClick}
+        component="div"
+        sx={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          opacity: 0.5, // Add this line
+          '&:hover': {
+            opacity: 1, // Add this line
+          },
+        }}
+      >
+        <Paper
+          variant="outlined"
+          sx={{
+            px: 3,
+            py: 5,
+            borderRadius: 2,
+            textAlign: 'center',
+            borderColor: (theme) => alpha(theme.palette.grey[500], 0.12),
+            boxShadow: (theme) => theme.customShadows.z24,
+            width: '100%',
+            flexGrow: 1,
+          }}
+        >
+          <Image
+            disabledEffect
+            alt={icon}
+            src={icon}
+            sx={{ mb: 2, width: 80, height: 80, mx: 'auto' }} // Adjust this line
+          />
+
+          <TextMaxLine variant="subtitle2" persistent>
+            {label}
+          </TextMaxLine>
+        </Paper>
+      </ButtonBase>
+    </m.div>
   );
 }
 
