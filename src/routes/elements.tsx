@@ -31,9 +31,21 @@ export const PaymentPage = Loadable(lazy(() => import('../pages/PaymentPage')));
 export const ComingSoonPage = Loadable(lazy(() => import('../pages/ComingSoonPage')));
 export const MaintenancePage = Loadable(lazy(() => import('../pages/MaintenancePage')));
 
-// New Pages
+// Programs pages
 export const UpcommingClassesPage = Loadable(lazy(() => import('../pages/UpcommingClasses')));
 export const CourseCatalogPage = Loadable(lazy(() => import('../pages/CourseCatalog')));
+export const SoftSkillsPage = Loadable(lazy(() => import('../pages/SoftSkills')));
+export const ComplianceTestingPage = Loadable(lazy(() => import('../pages/ComplianceTesting')));
+export const AutomationPage = Loadable(lazy(() => import('../pages/Automation')));
+export const SecurityTestingPage = Loadable(lazy(() => import('../pages/SecurityTesting')));
+export const ComptiaPage = Loadable(lazy(() => import('../pages/Comptia')));
+export const IstqbPage = Loadable(lazy(() => import('../pages/Istqb')));
+export const OraclePage = Loadable(lazy(() => import('../pages/Oracle')));
+export const ScrumAlliancePage = Loadable(lazy(() => import('../pages/ScrumAlliance')));
+export const IcaPage = Loadable(lazy(() => import('../pages/Ica')));
+export const IsqiPage = Loadable(lazy(() => import('../pages/Isqi')));
+export const Selenium = Loadable(lazy(() => import('../pages/Selenium')));
+export const AsqPage = Loadable(lazy(() => import('../pages/Asq')));
 
 // Admission Pages
 export const EnrollmentRequirmentPage = Loadable(
