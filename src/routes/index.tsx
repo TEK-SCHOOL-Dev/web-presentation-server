@@ -62,6 +62,11 @@ import {
   WebinarsAndWorkShopPage,
   BlogsPage,
   PodcastsPage,
+  ProfessionalNetworkingEventsPage,
+  JobMarketSupportServicesPage,
+  MembershipBenefitsPage,
+  PlatformFeaturesPage,
+  DiscussionForumsPage,
   // About US Pages
   OurTeamPage,
   OurStoryPage,
@@ -217,6 +222,11 @@ export default function Router() {
         { path: 'women-for-afghan-women', element: <WomenForAfghanWomenPage /> },
         { path: 'afghan-american-organization', element: <AfghanAmericanOrganizationPage /> },
         { path: 'afghan-american-foundation', element: <AfghanAmericanFoundationPage /> },
+        { path: 'professional-networking-events', element: <ProfessionalNetworkingEventsPage /> },
+        { path: 'job-market-support-services', element: <JobMarketSupportServicesPage /> },
+        { path:'membership-benefits', element: <MembershipBenefitsPage /> },
+        { path: 'platform-features', element: <PlatformFeaturesPage /> },
+        { path: 'discussion-forums', element: <DiscussionForumsPage /> },
         // Demo Components
         {
           path: 'components',

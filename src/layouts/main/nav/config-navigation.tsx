@@ -103,8 +103,8 @@ const navConfig = [
         subheader: 'Resources',
         items: [
           { title: 'Certification Verification', path: PATH_PAGE.certificateVerification },
-          { title: 'Professional Networking Events', path: PATH_PAGE.certificateVerification },
-          { title: 'Job Market Support Services', path: PATH_PAGE.certificateVerification },
+          { title: 'Professional Networking Events', path: PATH_PAGE.comingSoon },
+          { title: 'Job Market Support Services', path: PATH_PAGE.comingSoon },
           { title: 'Learning Resources', path: PATH_PAGE.learningResources },
           { title: 'Community Forums', path: PATH_PAGE.communityForums },
           { title: 'Career Resources', path: PATH_PAGE.careerResources },
@@ -113,10 +113,10 @@ const navConfig = [
       {
         subheader: 'Learners Platform ',
         items: [
-          { title: 'Membership Benefits', path: PATH_PAGE.enrollmentRequirements },
-          { title: 'Platform Features', path: PATH_PAGE.enrollmentProcess },
+          { title: 'Membership Benefits', path: PATH_PAGE.comingSoon },
+          { title: 'Platform Features', path: PATH_PAGE.comingSoon },
           { title: 'Webinars & Workshops', path: PATH_PAGE.webinarsAndWorkShops },
-          { title: 'Discussion Formus', path: PATH_PAGE.webinarsAndWorkShops },
+          { title: 'Discussion Forums', path: PATH_PAGE.comingSoon  },
         ],
       },
       {
