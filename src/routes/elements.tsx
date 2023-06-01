@@ -55,6 +55,11 @@ export const EnrollmentProcessPage = Loadable(lazy(() => import('../pages/Enroll
 export const FinancialAidPrograms = Loadable(lazy(() => import('../pages/FinancialAidProgram')));
 export const TekAidPartners = Loadable(lazy(() => import('../pages/TekAidPartners')));
 
+export const InternationalStudnetsPage = Loadable(lazy(() => import('../pages/InternationalStudents')));
+export const FinancialAidRequirmentPage = Loadable(lazy(() => import('../pages/FinancialAidRequirment')));
+export const WomenForAfghanWomenPage = Loadable(lazy(() => import('../pages/Waw'))); 
+export const AfghanAmericanOrganizationPage = Loadable(lazy(() => import('../pages/Aao')));
+export const AfghanAmericanFoundationPage = Loadable(lazy(() => import('../pages/Aaf')));
 // Resources pages
 export const CertificateVerificationPage = Loadable(
   lazy(() => import('../pages/CertificateVerification'))

@@ -56,10 +56,17 @@ export const PATH_PAGE = {
   selenium: '/selenium',
   asq: '/asq',
 
+  // Admissions
   enrollmentRequirements: '/enrollment-requirements',
   enrollmentProcess: '/enrollment-process',
   financialAidPrograms: '/financial-aid-programs',
   tekAidPartners: '/tek-aid-partners',
+
+  internationalStudents: '/international-students',
+  financialAidRequirment: '/financial-aid-requirements',
+  womenForAfghanWomen: '/women-for-afghan-women',
+  afghanAmericanOrganization: '/afghan-american-organization',
+  afghanAmericanFoundation: '/afghan-american-foundation',
 
   // Resources Pages
   certificateVerification: '/certificate-verification',
