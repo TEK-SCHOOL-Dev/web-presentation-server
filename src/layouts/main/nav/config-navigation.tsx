@@ -63,8 +63,8 @@ const navConfig = [
         items: [
           { title: 'Enrollment Process', path: PATH_PAGE.enrollmentProcess },
           { title: 'Requirements', path: PATH_PAGE.enrollmentRequirements },
-          { title: 'International Students', path: PATH_PAGE.enrollmentRequirements },
-          { title: 'Apply', path: PATH_PAGE.enrollmentRequirements },
+          { title: 'International Students', path: PATH_PAGE.comingSoon },
+          { title: 'Apply', path: PATH_PAGE.applyNow },
           // { title: 'Financial Aid Programs', path: PATH_PAGE.financialAidPrograms }, Delete this
           // { title: 'TEK Aid Partners', path: PATH_PAGE.tekAidPartners }, Delete this
         ],
@@ -72,19 +72,20 @@ const navConfig = [
       {
         subheader: 'TEK AID',
         items: [
-          { title: 'Financial Aid Requirements', path: PATH_PAGE.enrollmentRequirements },
-          { title: 'TEK Financial Aid Programs', path: PATH_PAGE.enrollmentProcess },
-          { title: 'Apply', path: PATH_PAGE.enrollmentProcess },
-          // { title: 'Financial Aid Programs', path: PATH_PAGE.financialAidPrograms },  Delete this
-          // { title: 'TEK Aid Partners', path: PATH_PAGE.tekAidPartners }, delete this
+          { title: 'Financial Aid Requirements', path: PATH_PAGE.comingSoon },
+          { title: 'TEK Financial Aid Programs', path: PATH_PAGE.comingSoon },
+          { title: 'Apply', path: PATH_PAGE.applyNow },
         ],
       },
       {
         subheader: 'Our AID Partners Programs',
         items: [
-          { title: 'Women for Afghan Women (WAW)', path: PATH_PAGE.enrollmentRequirements },
-          { title: 'Afghan American Organization (AAO)', path: PATH_PAGE.enrollmentProcess },
-          { title: 'Afghan American Foundation (AAF)', path: PATH_PAGE.enrollmentProcess },
+          { title: 'Women for Afghan Women (WAW)', path: PATH_PAGE.comingSoon },
+          {
+            title: 'Afghan American Organization (AAO)',
+            path: PATH_PAGE.comingSoon,
+          },
+          { title: 'Afghan American Foundation (AAF)', path: PATH_PAGE.comingSoon },
         ],
       },
       {
