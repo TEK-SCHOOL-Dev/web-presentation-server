@@ -55,9 +55,13 @@ export const EnrollmentProcessPage = Loadable(lazy(() => import('../pages/Enroll
 export const FinancialAidPrograms = Loadable(lazy(() => import('../pages/FinancialAidProgram')));
 export const TekAidPartners = Loadable(lazy(() => import('../pages/TekAidPartners')));
 
-export const InternationalStudnetsPage = Loadable(lazy(() => import('../pages/InternationalStudents')));
-export const FinancialAidRequirmentPage = Loadable(lazy(() => import('../pages/FinancialAidRequirment')));
-export const WomenForAfghanWomenPage = Loadable(lazy(() => import('../pages/Waw'))); 
+export const InternationalStudnetsPage = Loadable(
+  lazy(() => import('../pages/InternationalStudents'))
+);
+export const FinancialAidRequirmentPage = Loadable(
+  lazy(() => import('../pages/FinancialAidRequirment'))
+);
+export const WomenForAfghanWomenPage = Loadable(lazy(() => import('../pages/Waw')));
 export const AfghanAmericanOrganizationPage = Loadable(lazy(() => import('../pages/Aao')));
 export const AfghanAmericanFoundationPage = Loadable(lazy(() => import('../pages/Aaf')));
 // Resources pages
@@ -71,6 +75,15 @@ export const WebinarsAndWorkShopPage = Loadable(lazy(() => import('../pages/Webi
 export const BlogsPage = Loadable(lazy(() => import('../pages/Blogs')));
 export const PodcastsPage = Loadable(lazy(() => import('../pages/Podcasts')));
 
+export const ProfessionalNetworkingEventsPage = Loadable(
+  lazy(() => import('../pages/ProfessionalNetworkingEvents'))
+);
+export const JobMarketSupportServicesPage = Loadable(
+  lazy(() => import('../pages/JobMarketSupportServices'))
+);
+export const MembershipBenefitsPage = Loadable(lazy(() => import('../pages/MembershipBenefits')));
+export const PlatformFeaturesPage = Loadable(lazy(() => import('../pages/PlatformFeatures')));
+export const DiscussionForumsPage = Loadable(lazy(() => import('../pages/DiscussionForums')));
 // About US pages
 export const OurTeamPage = Loadable(lazy(() => import('../pages/OurTeam')));
 export const OurStoryPage = Loadable(lazy(() => import('../pages/OurStory')));

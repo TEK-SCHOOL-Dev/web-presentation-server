@@ -77,6 +77,11 @@ export const PATH_PAGE = {
   blogs: '/blogs',
   podcasts: '/podcasts',
 
+  professionalNetEvents: '/professional-networking-events',
+  JobMarketSupportServicesPage: '/job-market-support-services',
+  membershipBenefits: '/membership-benefits',
+  platformFeatures: '/platform-features',
+  discussionForums: '/discussion-forums',
   // About US Pages
   ourTeam: '/our-team',
   ourStory: '/our-story',
