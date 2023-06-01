@@ -91,6 +91,10 @@ export const PATH_PAGE = {
   doingBusiness: '/doing-business-with-us',
   socialImpact: '/social-impact',
 
+  missionVisionValues: '/mission-and-vision-and-values',
+  accreditation: '/accreditation',
+  facilities: '/facilities',
+  mentorshipSupport: '/mentorship-support',
   // Contact Us Pages
   faqNew: '/faq',
   scheduleTour: '/schedule-a-tour',

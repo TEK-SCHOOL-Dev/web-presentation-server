@@ -93,6 +93,12 @@ export const StudentActivitiesPage = Loadable(lazy(() => import('../pages/Studen
 export const DoingBusinessPage = Loadable(lazy(() => import('../pages/DoingBusiness')));
 export const SocialImpactPage = Loadable(lazy(() => import('../pages/SocialImpact')));
 
+export const MissionAndVisionAndValuesPage = Loadable(
+  lazy(() => import('../pages/Mission&Vision&Values'))
+);
+export const AccreditationPage = Loadable(lazy(() => import('../pages/Accreditation')));
+export const FacilitiesPage = Loadable(lazy(() => import('../pages/Facilities')));
+export const MentorshipSupportPage = Loadable(lazy(() => import('../pages/MentorshipSupport')));
 // Contact Us pages
 export const ScheduleTourPage = Loadable(lazy(() => import('../pages/ScheduleTour')));
 // Apply Now pages

@@ -75,6 +75,10 @@ import {
   StudentActivitiesPage,
   DoingBusinessPage,
   SocialImpactPage,
+  MissionAndVisionAndValuesPage,
+  AccreditationPage,
+  FacilitiesPage,
+  MentorshipSupportPage,
   // Contact US Pages
   FaqsPage,
   ScheduleTourPage,
@@ -224,9 +228,13 @@ export default function Router() {
         { path: 'afghan-american-foundation', element: <AfghanAmericanFoundationPage /> },
         { path: 'professional-networking-events', element: <ProfessionalNetworkingEventsPage /> },
         { path: 'job-market-support-services', element: <JobMarketSupportServicesPage /> },
-        { path:'membership-benefits', element: <MembershipBenefitsPage /> },
+        { path: 'membership-benefits', element: <MembershipBenefitsPage /> },
         { path: 'platform-features', element: <PlatformFeaturesPage /> },
         { path: 'discussion-forums', element: <DiscussionForumsPage /> },
+        { path: 'mission-and-vision-and-values', element: <MissionAndVisionAndValuesPage /> },
+        { path: 'accreditation', element: <AccreditationPage /> },
+        { path: 'facilities', element: <FacilitiesPage /> },
+        { path: 'mentorship-support', element: <MentorshipSupportPage /> },
         // Demo Components
         {
           path: 'components',
