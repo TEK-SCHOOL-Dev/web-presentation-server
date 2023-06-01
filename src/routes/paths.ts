@@ -39,8 +39,23 @@ export const PATH_PAGE = {
   page404: '/404',
   page500: '/500',
   components: '/components',
+
+  // Program Pages
   upcommingClasses: '/upcomming-classes',
   courseCatalog: 'course-catalog',
+  softSkills: '/soft-skills',
+  complianceTesting: '/compliance-testing',
+  automation: '/automation',
+  securityTesting: '/security-testing',
+  comptia: '/comptia',
+  istqb: '/Istqb',
+  oracle: '/oracle',
+  scrumAlliance: '/scrum-alliance',
+  ica: '/ica',
+  isqi: '/isqi',
+  selenium: '/selenium',
+  asq: '/asq',
+
   enrollmentRequirements: '/enrollment-requirements',
   enrollmentProcess: '/enrollment-process',
   financialAidPrograms: '/financial-aid-programs',

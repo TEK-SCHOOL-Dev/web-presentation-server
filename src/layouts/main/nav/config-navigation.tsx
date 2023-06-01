@@ -4,7 +4,6 @@ import { PATH_AUTH, PATH_PAGE } from '../../../routes/paths';
 import { PATH_AFTER_LOGIN } from '../../../config-global';
 // components
 import Iconify from '../../../components/iconify';
-
 // ----------------------------------------------------------------------
 
 const navConfig = [
@@ -19,7 +18,7 @@ const navConfig = [
     icon: <Iconify icon="eva:file-fill" />,
     children: [
       {
-        subheader: 'Courses & Programs',
+        subheader: 'Accelerated Training Programs',
         items: [
           { title: 'Upcoming Classes', path: PATH_PAGE.upcommingClasses },
           { title: 'Course Catalog', path: PATH_PAGE.courseCatalog },
@@ -29,23 +28,23 @@ const navConfig = [
       {
         subheader: 'Workshops',
         items: [
-          { title: 'Soft Skills', path: PATH_PAGE.upcommingClasses },
-          { title: 'Compliance Testing', path: PATH_PAGE.upcommingClasses },
-          { title: 'Automation', path: PATH_PAGE.upcommingClasses },
-          { title: 'Security Testing', path: PATH_PAGE.upcommingClasses },
+          { title: 'Soft Skills', path: PATH_PAGE.comingSoon },
+          { title: 'Compliance Testing', path: PATH_PAGE.comingSoon },
+          { title: 'Automation', path: PATH_PAGE.comingSoon },
+          { title: 'Security Testing', path: PATH_PAGE.comingSoon },
         ],
       },
       {
         subheader: 'Certificate Prep Programs',
         items: [
-          { title: 'CompTIA', path: PATH_PAGE.upcommingClasses },
-          { title: 'ISTQB', path: PATH_PAGE.about },
-          { title: 'Oracle', path: PATH_PAGE.about },
-          { title: 'Scrum Alliance', path: PATH_PAGE.about },
-          { title: 'ICA', path: PATH_PAGE.about },
-          { title: 'ISQI', path: PATH_PAGE.about },
-          { title: 'Selenium', path: PATH_PAGE.about },
-          { title: 'ASQ', path: PATH_PAGE.about },
+          { title: 'CompTIA', path: PATH_PAGE.comingSoon },
+          { title: 'ISTQB', path: PATH_PAGE.comingSoon },
+          { title: 'Oracle', path: PATH_PAGE.comingSoon },
+          { title: 'Scrum Alliance', path: PATH_PAGE.comingSoon },
+          { title: 'ICA', path: PATH_PAGE.comingSoon },
+          { title: 'ISQI', path: PATH_PAGE.comingSoon },
+          { title: 'Selenium', path: PATH_PAGE.comingSoon },
+          { title: 'ASQ', path: PATH_PAGE.comingSoon },
         ],
       },
       {
