@@ -116,7 +116,7 @@ const navConfig = [
           { title: 'Membership Benefits', path: PATH_PAGE.comingSoon },
           { title: 'Platform Features', path: PATH_PAGE.comingSoon },
           { title: 'Webinars & Workshops', path: PATH_PAGE.webinarsAndWorkShops },
-          { title: 'Discussion Forums', path: PATH_PAGE.comingSoon  },
+          { title: 'Discussion Forums', path: PATH_PAGE.comingSoon },
         ],
       },
       {
@@ -143,9 +143,9 @@ const navConfig = [
           { title: 'Our Team', path: PATH_PAGE.ourTeam },
           { title: 'Our Story', path: PATH_PAGE.ourStory },
           { title: 'Media Coverage', path: PATH_PAGE.mediaCoverage },
-          { title: 'Mission & Vision & Values', path: PATH_PAGE.mediaCoverage },
-          { title: 'Accreditation', path: PATH_PAGE.mediaCoverage },
-          { title: 'Facilities', path: PATH_PAGE.mediaCoverage },
+          { title: 'Mission & Vision & Values', path: PATH_PAGE.comingSoon },
+          { title: 'Accreditation', path: PATH_PAGE.comingSoon },
+          { title: 'Facilities', path: PATH_PAGE.comingSoon },
         ],
       },
       {
@@ -153,7 +153,7 @@ const navConfig = [
         items: [
           { title: 'Student Stories', path: PATH_PAGE.studentStories },
           { title: 'Student Activities & Events', path: PATH_PAGE.studentActivities },
-          { title: 'Mentorship Support', path: PATH_PAGE.studentActivities },
+          { title: 'Mentorship Support', path: PATH_PAGE.comingSoon },
         ],
       },
 
