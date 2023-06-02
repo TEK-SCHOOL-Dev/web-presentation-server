@@ -179,7 +179,7 @@ const navConfig = [
       {
         subheader: 'Get in Touch',
         items: [
-          { title: 'Contact Information', path: PATH_PAGE.faqNew },
+          { title: 'Contact Information', path: PATH_PAGE.contactInformation },
           { title: 'General Inquiries', path: PATH_PAGE.scheduleTour },
           { title: 'Support & Helpdesk', path: PATH_PAGE.scheduleTour },
           { title: 'Social Media Channels icons', path: PATH_PAGE.scheduleTour },

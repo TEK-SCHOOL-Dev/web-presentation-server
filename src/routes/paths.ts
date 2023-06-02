@@ -98,7 +98,7 @@ export const PATH_PAGE = {
   // Contact Us Pages
   faqNew: '/faq',
   scheduleTour: '/schedule-a-tour',
-
+  contactInformation: '/contact-information',
   // Apply Now
   applyNow: '/apply-now',
 };

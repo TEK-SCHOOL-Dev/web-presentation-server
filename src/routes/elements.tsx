@@ -101,6 +101,7 @@ export const FacilitiesPage = Loadable(lazy(() => import('../pages/Facilities'))
 export const MentorshipSupportPage = Loadable(lazy(() => import('../pages/MentorshipSupport')));
 // Contact Us pages
 export const ScheduleTourPage = Loadable(lazy(() => import('../pages/ScheduleTour')));
+export const ContactInformationPage = Loadable(lazy(() => import('../pages/ContactInformation')));
 // Apply Now pages
 export const ApplyNowPage = Loadable(lazy(() => import('../pages/ApplyNow')));
 
