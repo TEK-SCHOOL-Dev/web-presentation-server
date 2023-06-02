@@ -82,6 +82,7 @@ import {
   // Contact US Pages
   FaqsPage,
   ScheduleTourPage,
+  ContactInformationPage,
   // Apply Now
   ApplyNowPage,
   //
@@ -235,6 +236,7 @@ export default function Router() {
         { path: 'accreditation', element: <AccreditationPage /> },
         { path: 'facilities', element: <FacilitiesPage /> },
         { path: 'mentorship-support', element: <MentorshipSupportPage /> },
+        { path: 'contact-information', element: <ContactInformationPage /> },
         // Demo Components
         {
           path: 'components',
