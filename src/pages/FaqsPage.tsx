@@ -1,11 +1,14 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
 import { Box, Container, Typography } from '@mui/material';
 import { useState } from 'react';
-// sections
-import { FaqsHero, FaqsCategory, FaqsList, FaqsForm } from '../sections/faqs';
+import { FaqsCategory, FaqsList, FaqsForm } from '../sections/faqs';
 
-// ----------------------------------------------------------------------
+const styles = {
+  box: {
+    maxWidth: '80%',
+    margin: 'auto',
+  },
+};
 
 export default function FaqsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -18,25 +21,24 @@ export default function FaqsPage() {
         <title> Faqs | TEk School </title>
       </Helmet>
 
-      {/* <FaqsHero /> */}
-
-      <Container sx={{ pt: 15, pb: 10, position: 'relative' }}>
-        <FaqsCategory selectCategory={handleSelectCategory} />
-
-        <Typography variant="h3" sx={{ mb: 5 }}>
+      <Container sx={{ height: '100vh', pt: 5, pb: 10, position: 'relative' }}>
+        <Typography variant="h3" sx={{ mb: 5, textAlign: 'center', color: 'primary.main' }}>
           Frequently asked questions
         </Typography>
 
-        <Box
-          gap={10}
-          display="grid"
-          gridTemplateColumns={{
-            xs: 'repeat(1, 1fr)',
-            md: 'repeat(2, 1fr)',
-          }}
-        >
-          {selectedCategory && <FaqsList selectedCategory={selectedCategory} />}
+        <Box sx={styles.box}>
+          <FaqsCategory selectCategory={handleSelectCategory} />
+        </Box>
 
+        {selectedCategory && (
+          <Box sx={styles.box}>
+            <FaqsList selectedCategory={selectedCategory} />
+          </Box>
+        )}
+      </Container>
+
+      <Container sx={{ pt: 15, pb: 10, position: 'relative' }}>
+        <Box sx={styles.box}>
           <FaqsForm />
         </Box>
       </Container>
