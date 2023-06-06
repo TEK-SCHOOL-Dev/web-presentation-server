@@ -179,7 +179,7 @@ function CardDesktop({ category, selectCategory }: CardProps) {
       },
     },
   };
-  
+
   return (
     <m.div
       initial="initial"
@@ -195,9 +195,9 @@ function CardDesktop({ category, selectCategory }: CardProps) {
           width: '100%',
           height: '100%',
           display: 'flex',
-          opacity: 0.5, // Add this line
+          opacity: 0.5,
           '&:hover': {
-            opacity: 1, // Add this line
+            opacity: 1, 
           },
         }}
       >
@@ -218,7 +218,7 @@ function CardDesktop({ category, selectCategory }: CardProps) {
             disabledEffect
             alt={icon}
             src={icon}
-            sx={{ mb: 2, width: 80, height: 80, mx: 'auto' }} // Adjust this line
+            sx={{ mb: 2, width: 80, height: 80, mx: 'auto' }} 
           />
 
           <TextMaxLine variant="subtitle2" persistent>
