@@ -56,9 +56,12 @@ const CATEGORIES = [
   },
 ];
 
+type FaqsCategoryProps = {
+  selectCategory: (category: string) => void;
+};
 // ----------------------------------------------------------------------
 
-export default function FaqsCategory() {
+export default function FaqsCategory({ selectCategory }: FaqsCategoryProps) {
   const isDesktop = useResponsive('up', 'md');
 
   const [open, setOpen] = useState(false);
@@ -69,6 +72,10 @@ export default function FaqsCategory() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleClick = (categoryLabel: string) => {
+    selectCategory(categoryLabel);
   };
 
   if (!isDesktop) {
@@ -90,7 +97,11 @@ export default function FaqsCategory() {
         <Drawer open={open} onClose={handleClose}>
           <Box gap={1} display="grid" gridTemplateColumns="repeat(2, 1fr)" sx={{ p: 1 }}>
             {CATEGORIES.map((category) => (
-              <CardMobile key={category.label} category={category} />
+              <CardMobile
+                key={category.label}
+                category={category}
+                selectCategory={selectCategory}
+              />
             ))}
           </Box>
         </Drawer>
@@ -113,7 +124,7 @@ export default function FaqsCategory() {
     >
       {CATEGORIES.map((category) => (
         <m.div key={category.label} variants={varFade().inDown}>
-          <CardDesktop category={category} />
+          <CardDesktop category={category} selectCategory={selectCategory} />
         </m.div>
       ))}
     </Box>
@@ -127,10 +138,15 @@ type CardProps = {
     label: string;
     icon: string;
   };
+  selectCategory: (category: string) => void;
 };
 
-function CardDesktop({ category }: CardProps) {
+function CardDesktop({ category, selectCategory }: CardProps) {
   const { label, icon } = category;
+
+  const handleClick = () => {
+    selectCategory(label);
+  };
 
   const cardVariant = {
     initial: {
@@ -163,12 +179,7 @@ function CardDesktop({ category }: CardProps) {
       },
     },
   };
-
-  const handleClick = () => {
-    // Define what should happen when a card is clicked
-    console.log(`Clicked on ${label}`);
-  };
-
+  
   return (
     <m.div
       initial="initial"
@@ -221,11 +232,15 @@ function CardDesktop({ category }: CardProps) {
 
 // ----------------------------------------------------------------------
 
-function CardMobile({ category }: CardProps) {
+function CardMobile({ category, selectCategory }: CardProps) {
   const { label, icon } = category;
 
+  const handleClick = (categoryLabel: string) => {
+    selectCategory(categoryLabel);
+  };
   return (
     <ListItemButton
+      onClick={() => handleClick(category.label)}
       key={label}
       sx={{
         py: 2,
