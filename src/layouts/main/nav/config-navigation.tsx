@@ -28,23 +28,23 @@ const navConfig = [
       {
         subheader: 'Workshops',
         items: [
-          { title: 'Soft Skills', path: PATH_PAGE.comingSoon },
-          { title: 'Compliance Testing', path: PATH_PAGE.comingSoon },
-          { title: 'Automation', path: PATH_PAGE.comingSoon },
-          { title: 'Security Testing', path: PATH_PAGE.comingSoon },
+          { title: 'Soft Skills', path: PATH_PAGE.maintenance },
+          { title: 'Compliance Testing', path: PATH_PAGE.maintenance },
+          { title: 'Automation', path: PATH_PAGE.maintenance },
+          { title: 'Security Testing', path: PATH_PAGE.maintenance },
         ],
       },
       {
         subheader: 'Certificate Prep Programs',
         items: [
-          { title: 'CompTIA', path: PATH_PAGE.comingSoon },
-          { title: 'ISTQB', path: PATH_PAGE.comingSoon },
-          { title: 'Oracle', path: PATH_PAGE.comingSoon },
-          { title: 'Scrum Alliance', path: PATH_PAGE.comingSoon },
-          { title: 'ICA', path: PATH_PAGE.comingSoon },
-          { title: 'ISQI', path: PATH_PAGE.comingSoon },
-          { title: 'Selenium', path: PATH_PAGE.comingSoon },
-          { title: 'ASQ', path: PATH_PAGE.comingSoon },
+          { title: 'CompTIA', path: PATH_PAGE.maintenance },
+          { title: 'ISTQB', path: PATH_PAGE.maintenance },
+          { title: 'Oracle', path: PATH_PAGE.maintenance },
+          { title: 'Scrum Alliance', path: PATH_PAGE.maintenance },
+          { title: 'ICA', path: PATH_PAGE.maintenance },
+          { title: 'ISQI', path: PATH_PAGE.maintenance },
+          { title: 'Selenium', path: PATH_PAGE.maintenance },
+          { title: 'ASQ', path: PATH_PAGE.maintenance },
         ],
       },
       {
@@ -63,7 +63,7 @@ const navConfig = [
         items: [
           { title: 'Enrollment Process', path: PATH_PAGE.enrollmentProcess },
           { title: 'Requirements', path: PATH_PAGE.enrollmentRequirements },
-          { title: 'International Students', path: PATH_PAGE.comingSoon },
+          { title: 'International Students', path: PATH_PAGE.maintenance },
           { title: 'Apply', path: PATH_PAGE.applyNow },
           // { title: 'Financial Aid Programs', path: PATH_PAGE.financialAidPrograms }, Delete this
           // { title: 'TEK Aid Partners', path: PATH_PAGE.tekAidPartners }, Delete this
@@ -72,20 +72,20 @@ const navConfig = [
       {
         subheader: 'TEK AID',
         items: [
-          { title: 'Financial Aid Requirements', path: PATH_PAGE.comingSoon },
-          { title: 'TEK Financial Aid Programs', path: PATH_PAGE.comingSoon },
+          { title: 'Financial Aid Requirements', path: PATH_PAGE.maintenance },
+          { title: 'TEK Financial Aid Programs', path: PATH_PAGE.maintenance },
           { title: 'Apply', path: PATH_PAGE.applyNow },
         ],
       },
       {
         subheader: 'Our AID Partners Programs',
         items: [
-          { title: 'Women for Afghan Women (WAW)', path: PATH_PAGE.comingSoon },
+          { title: 'Women for Afghan Women (WAW)', path: PATH_PAGE.maintenance },
           {
             title: 'Afghan American Organization (AAO)',
-            path: PATH_PAGE.comingSoon,
+            path: PATH_PAGE.maintenance,
           },
-          { title: 'Afghan American Foundation (AAF)', path: PATH_PAGE.comingSoon },
+          { title: 'Afghan American Foundation (AAF)', path: PATH_PAGE.maintenance },
         ],
       },
       {
@@ -103,8 +103,8 @@ const navConfig = [
         subheader: 'Resources',
         items: [
           { title: 'Certification Verification', path: PATH_PAGE.certificateVerification },
-          { title: 'Professional Networking Events', path: PATH_PAGE.comingSoon },
-          { title: 'Job Market Support Services', path: PATH_PAGE.comingSoon },
+          { title: 'Professional Networking Events', path: PATH_PAGE.maintenance },
+          { title: 'Job Market Support Services', path: PATH_PAGE.maintenance },
           { title: 'Learning Resources', path: PATH_PAGE.learningResources },
           { title: 'Community Forums', path: PATH_PAGE.communityForums },
           { title: 'Career Resources', path: PATH_PAGE.careerResources },
@@ -113,10 +113,10 @@ const navConfig = [
       {
         subheader: 'Learners Platform ',
         items: [
-          { title: 'Membership Benefits', path: PATH_PAGE.comingSoon },
-          { title: 'Platform Features', path: PATH_PAGE.comingSoon },
+          { title: 'Membership Benefits', path: PATH_PAGE.maintenance },
+          { title: 'Platform Features', path: PATH_PAGE.maintenance },
           { title: 'Webinars & Workshops', path: PATH_PAGE.webinarsAndWorkShops },
-          { title: 'Discussion Forums', path: PATH_PAGE.comingSoon },
+          { title: 'Discussion Forums', path: PATH_PAGE.maintenance },
         ],
       },
       {
@@ -143,9 +143,9 @@ const navConfig = [
           { title: 'Our Team', path: PATH_PAGE.ourTeam },
           { title: 'Our Story', path: PATH_PAGE.ourStory },
           { title: 'Media Coverage', path: PATH_PAGE.mediaCoverage },
-          { title: 'Mission & Vision & Values', path: PATH_PAGE.comingSoon },
-          { title: 'Accreditation', path: PATH_PAGE.comingSoon },
-          { title: 'Facilities', path: PATH_PAGE.comingSoon },
+          { title: 'Mission & Vision & Values', path: PATH_PAGE.maintenance },
+          { title: 'Accreditation', path: PATH_PAGE.maintenance },
+          { title: 'Facilities', path: PATH_PAGE.maintenance },
         ],
       },
       {
@@ -153,7 +153,7 @@ const navConfig = [
         items: [
           { title: 'Student Stories', path: PATH_PAGE.studentStories },
           { title: 'Student Activities & Events', path: PATH_PAGE.studentActivities },
-          { title: 'Mentorship Support', path: PATH_PAGE.comingSoon },
+          { title: 'Mentorship Support', path: PATH_PAGE.maintenance },
         ],
       },
 

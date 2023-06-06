@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
-import { Box, Divider, Container } from '@mui/material';
+import { Box, Container } from '@mui/material';
 // sections
-import { ApplyForm } from '../sections/applyNow';
+import { ApplyForm, Categories } from '../sections/applyNow';
 
 // ----------------------------------------------------------------------
 
@@ -13,6 +13,8 @@ export default function AboutPage() {
         <Helmet>
           <title> Apply Now | TEKSchool </title>
         </Helmet>
+
+        <Categories />
 
         <Container sx={{ pt: 15, pb: 10, position: 'relative' }}>
           <Box
