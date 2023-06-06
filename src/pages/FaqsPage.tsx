@@ -1,12 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { Box, Container, Typography } from '@mui/material';
+import { useState } from 'react';
 // sections
 import { FaqsHero, FaqsCategory, FaqsList, FaqsForm } from '../sections/faqs';
 
 // ----------------------------------------------------------------------
 
 export default function FaqsPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const handleSelectCategory = (categoryLabel: string) => {
+    setSelectedCategory(categoryLabel);
+  };
   return (
     <>
       <Helmet>
@@ -16,8 +21,7 @@ export default function FaqsPage() {
       {/* <FaqsHero /> */}
 
       <Container sx={{ pt: 15, pb: 10, position: 'relative' }}>
-        
-        <FaqsCategory />
+        <FaqsCategory selectCategory={handleSelectCategory} />
 
         <Typography variant="h3" sx={{ mb: 5 }}>
           Frequently asked questions
@@ -31,10 +35,9 @@ export default function FaqsPage() {
             md: 'repeat(2, 1fr)',
           }}
         >
-          <FaqsList />
+          {selectedCategory && <FaqsList selectedCategory={selectedCategory} />}
 
           <FaqsForm />
-          
         </Box>
       </Container>
     </>

@@ -12,12 +12,81 @@ export const _carouselsMembers = [...Array(6)].map((_, index) => ({
 
 // ----------------------------------------------------------------------
 
-export const _faqs = [...Array(9)].map((_, index) => ({
-  id: _mock.id(index),
-  value: `panel${index + 1}`,
-  heading: `Questions ${index + 1}`,
-  detail: _mock.text.description(index),
-}));
+export const _faqs = [
+  {
+    id: '1',
+    heading: 'Question 1 Academics',
+    detail: 'Answer for Question 1',
+    category: 'Academics',
+  },
+  {
+    id: '2',
+    heading: 'Question 2 Academics',
+    detail: 'Answer for Question 2',
+    category: 'Academics',
+  },
+  {
+    id: '3',
+    heading: 'Question 1 Admissions',
+    detail: 'Answer for Question 1',
+    category: 'Admissions',
+  },
+  {
+    id: '4',
+    heading: 'Question 2 Admissions',
+    detail: 'Answer for Question 2',
+    category: 'Admissions',
+  },
+  {
+    id: '5',
+    heading: 'Question 1 Finances',
+    detail: 'Answer for Question 1',
+    category: 'Finances',
+  },
+  {
+    id: '6',
+    heading: 'Question 2 Finances',
+    detail: 'Answer for Question 2',
+    category: 'Finances',
+  },
+  {
+    id: '7',
+    heading: 'Question 1 Teaching & Learning',
+    detail: 'Answer for Question 1',
+    category: 'Teaching & Learning',
+  },
+  {
+    id: '8',
+    heading: 'Question 2 Teaching & Learning',
+    detail: 'Answer for Question 2',
+    category: 'Teaching & Learning',
+  },
+  {
+    id: '9',
+    heading: 'Question 1 Student Life',
+    detail: 'Answer for Question 1',
+    category: 'Student Life',
+  },
+  {
+    id: '10',
+    heading: 'Question 2 Student Life',
+    detail: 'Answer for Question 2',
+    category: 'Student Life',
+  },
+  {
+    id: '11',
+    heading: 'Question 1 Career Services',
+    detail: 'Answer for Question 1',
+    category: 'Career Services',
+  },
+  {
+    id: '12',
+    heading: 'Question 2 Career Services',
+    detail: 'Answer for Question 2',
+    category: 'Career Services',
+  },
+  // ...add more questions here
+];
 
 // ----------------------------------------------------------------------
 
