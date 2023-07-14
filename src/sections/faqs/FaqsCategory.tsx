@@ -59,12 +59,23 @@ const CATEGORIES = [
 type FaqsCategoryProps = {
   selectCategory: (category: string) => void;
 };
+
+type CardProps = {
+  category: {
+    label: string;
+    icon: string;
+  };
+  selectCategory: (category: string) => void;
+  selectedCategory: string | null;
+};
+
 // ----------------------------------------------------------------------
 
 export default function FaqsCategory({ selectCategory }: FaqsCategoryProps) {
   const isDesktop = useResponsive('up', 'md');
 
   const [open, setOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const handleOpen = () => {
     setOpen(true);
@@ -76,6 +87,7 @@ export default function FaqsCategory({ selectCategory }: FaqsCategoryProps) {
 
   const handleClick = (categoryLabel: string) => {
     selectCategory(categoryLabel);
+    setSelectedCategory(categoryLabel);
   };
 
   if (!isDesktop) {
@@ -101,6 +113,7 @@ export default function FaqsCategory({ selectCategory }: FaqsCategoryProps) {
                 key={category.label}
                 category={category}
                 selectCategory={selectCategory}
+                selectedCategory={selectedCategory}
               />
             ))}
           </Box>
@@ -115,16 +128,20 @@ export default function FaqsCategory({ selectCategory }: FaqsCategoryProps) {
       gap={1.5}
       display="grid"
       gridTemplateColumns={{
-        xs: 'repeat(1, 1fr)', // For mobile screens, show 1 card per row
-        sm: 'repeat(3, 1fr)', // For small screens, show 3 cards per row
-        md: 'repeat(3, 1fr)', // For medium screens, show 3 cards per row
-        lg: 'repeat(6, 1fr)', // For large screens, show 6 cards per row
+        xs: 'repeat(1, 1fr)',
+        sm: 'repeat(3, 1fr)',
+        md: 'repeat(3, 1fr)',
+        lg: 'repeat(6, 1fr)',
       }}
       sx={{ mb: 15, width: '100%' }}
     >
       {CATEGORIES.map((category) => (
         <m.div key={category.label} variants={varFade().inDown}>
-          <CardDesktop category={category} selectCategory={selectCategory} />
+          <CardDesktop
+            category={category}
+            selectCategory={selectCategory}
+            selectedCategory={selectedCategory}
+          />
         </m.div>
       ))}
     </Box>
@@ -133,15 +150,7 @@ export default function FaqsCategory({ selectCategory }: FaqsCategoryProps) {
 
 // ----------------------------------------------------------------------
 
-type CardProps = {
-  category: {
-    label: string;
-    icon: string;
-  };
-  selectCategory: (category: string) => void;
-};
-
-function CardDesktop({ category, selectCategory }: CardProps) {
+function CardDesktop({ category, selectCategory, selectedCategory }: CardProps) {
   const { label, icon } = category;
 
   const handleClick = () => {
@@ -183,7 +192,7 @@ function CardDesktop({ category, selectCategory }: CardProps) {
   return (
     <m.div
       initial="initial"
-      animate="animate"
+      animate={selectedCategory === label ? 'hover' : 'animate'}
       whileHover="hover"
       exit="exit"
       variants={cardVariant}
@@ -197,7 +206,7 @@ function CardDesktop({ category, selectCategory }: CardProps) {
           display: 'flex',
           opacity: 0.5,
           '&:hover': {
-            opacity: 1, 
+            opacity: 1,
           },
         }}
       >
@@ -218,7 +227,7 @@ function CardDesktop({ category, selectCategory }: CardProps) {
             disabledEffect
             alt={icon}
             src={icon}
-            sx={{ mb: 2, width: 80, height: 80, mx: 'auto' }} 
+            sx={{ mb: 2, width: 80, height: 80, mx: 'auto' }}
           />
 
           <TextMaxLine variant="subtitle2" persistent>
@@ -232,15 +241,16 @@ function CardDesktop({ category, selectCategory }: CardProps) {
 
 // ----------------------------------------------------------------------
 
-function CardMobile({ category, selectCategory }: CardProps) {
+function CardMobile({ category, selectCategory, selectedCategory }: CardProps) {
   const { label, icon } = category;
 
-  const handleClick = (categoryLabel: string) => {
-    selectCategory(categoryLabel);
+  const handleClick = () => {
+    selectCategory(label);
   };
+
   return (
     <ListItemButton
-      onClick={() => handleClick(category.label)}
+      onClick={handleClick}
       key={label}
       sx={{
         py: 2,
@@ -251,7 +261,7 @@ function CardMobile({ category, selectCategory }: CardProps) {
         alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'center',
-        bgcolor: 'background.neutral',
+        bgcolor: selectedCategory === label ? 'primary.main' : 'background.neutral',
       }}
     >
       <Image alt={icon} src={icon} sx={{ width: 48, height: 48, mb: 1 }} />

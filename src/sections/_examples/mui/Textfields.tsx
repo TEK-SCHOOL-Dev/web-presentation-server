@@ -1,7 +1,23 @@
 import { useState } from 'react';
 // @mui
-import { MenuItem, TextField, IconButton, InputAdornment } from '@mui/material';
+import {
+  MenuItem,
+  TextField,
+  IconButton,
+  InputAdornment,
+  FormControlLabel,
+  Radio,
+  FormControl,
+  RadioGroup,
+  Grid,
+} from '@mui/material';
 import { Masonry } from '@mui/lab';
+import {
+  DatePicker,
+  StaticDatePicker,
+  MobileDatePicker,
+  DesktopDatePicker,
+} from '@mui/x-date-pickers';
 // components
 import Iconify from '../../../components/iconify';
 //
@@ -9,11 +25,28 @@ import { Block } from '../Block';
 
 // ----------------------------------------------------------------------
 
-const CURRENCIES = [
-  { value: 'USD', label: '$' },
-  { value: 'EUR', label: '€' },
-  { value: 'BTC', label: '฿' },
-  { value: 'JPY', label: '¥' },
+const STATES = [
+  { value: 'Virginia', label: 'Virginia' },
+  { value: 'Ohio', label: 'Ohio' },
+  { value: 'Pennsylvania', label: 'Pennsylvania' },
+  { value: 'New York', label: 'New York' },
+  { value: 'Michigan', label: 'Michigan' },
+  { value: 'Washington', label: 'Washington' },
+];
+
+const COUNTRIES = [
+  { value: 'United States', label: 'United States' },
+  { value: 'Canada', label: 'Canada' },
+  { value: 'United Kingdom', label: 'United Kingdom' },
+  { value: 'Germany', label: 'Germany' },
+  { value: 'France', label: 'France' },
+  { value: 'Spain', label: 'Spain' },
+];
+
+const IDTYPES = [
+  { value: 'Passport', label: 'Passport' },
+  { value: 'Driving License', label: 'Driving License' },
+  { value: 'National ID', label: 'National ID' },
 ];
 
 const style = {
@@ -35,7 +68,11 @@ type Props = {
 };
 
 export default function Textfields({ variant }: Props) {
-  const [currency, setCurrency] = useState('EUR');
+  const [gender, setGender] = useState('male');
+  const [country, setCountry] = useState('United States');
+  const [state, setState] = useState('Virginia');
+  const [idType, setIdType] = useState('National ID');
+  const [value, setValue] = useState<Date | null>(new Date());
 
   const [values, setValues] = useState<State>({
     amount: '',
@@ -45,8 +82,20 @@ export default function Textfields({ variant }: Props) {
     showPassword: false,
   });
 
-  const handleChangeCurrency = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrency(event.target.value);
+  const handleChangeCountry = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCountry(event.target.value);
+  };
+
+  const handleChangeState = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setState(event.target.value);
+  };
+
+  const handleChangeIdType = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIdType(event.target.value);
+  };
+
+  const handleChangeGender = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setGender(event.target.value);
   };
 
   const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,222 +113,123 @@ export default function Textfields({ variant }: Props) {
   return (
     <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
       <Block title="General" sx={style}>
-        <TextField variant={variant} fullWidth label="Inactive" />
+        <TextField variant={variant} required fullWidth label="First Name" />
+
+        <TextField variant={variant} fullWidth label="Middle Name (optional)" />
+
+        <TextField variant={variant} required fullWidth label="Last Name" />
 
         <TextField
           variant={variant}
           required
           fullWidth
-          label="Activated"
-          defaultValue="Hello Minimal"
-        />
-
-        <TextField
-          variant={variant}
-          fullWidth
-          type="password"
-          label="Password"
-          autoComplete="current-password"
-        />
-
-        <TextField
-          variant={variant}
-          disabled
-          fullWidth
-          label="Disabled"
-          defaultValue="Hello Minimal"
-        />
-      </Block>
-
-      <Block title="With Icon & Adornments" sx={style}>
-        <TextField
-          variant={variant}
-          fullWidth
-          label="Filled"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Iconify icon="eva:person-fill" width={24} />
-              </InputAdornment>
-            ),
-          }}
-        />
-
-        <TextField
-          variant={variant}
-          disabled
-          fullWidth
-          label="Disabled"
-          defaultValue="Hello Minimal"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Iconify icon="eva:person-fill" width={24} />
-              </InputAdornment>
-            ),
-          }}
-        />
-
-        <TextField
-          variant={variant}
-          fullWidth
-          label="With normal TextField"
-          InputProps={{
-            startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-          }}
-        />
-
-        <TextField
-          variant={variant}
-          fullWidth
-          value={values.weight}
-          onChange={handleChange('weight')}
-          helperText="Weight"
-          InputProps={{
-            endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
-          }}
-        />
-
-        <TextField
-          variant={variant}
-          fullWidth
-          type={values.showPassword ? 'text' : 'password'}
-          value={values.password}
-          onChange={handleChange('password')}
-          label="Password"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Iconify icon="eva:person-fill" width={24} />
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {values.showPassword ? (
-                    <Iconify icon="eva:eye-fill" width={24} />
-                  ) : (
-                    <Iconify icon="eva:eye-off-fill" width={24} />
-                  )}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
-      </Block>
-
-      <Block title="With Caption" sx={style}>
-        <TextField
-          variant={variant}
-          fullWidth
-          label="Error"
-          defaultValue="Hello Minimal"
-          helperText="Incorrect entry."
-        />
-
-        <TextField
-          variant={variant}
-          error
-          fullWidth
-          label="Error"
-          defaultValue="Hello Minimal"
-          helperText="Incorrect entry."
-        />
-      </Block>
-
-      <Block title="Type" sx={style}>
-        <TextField
-          variant={variant}
-          fullWidth
-          type="password"
-          label="Password"
-          autoComplete="current-password"
-        />
-
-        <TextField
-          variant={variant}
-          fullWidth
-          type="number"
-          label="Number"
-          defaultValue={0}
+          label="Birthdate"
+          type="date"
           InputLabelProps={{ shrink: true }}
         />
 
-        <TextField variant={variant} fullWidth label="Search" type="search" />
+        <FormControl component="fieldset">
+          <RadioGroup
+            row
+            aria-label="gender"
+            name="row-radio-buttons-group"
+            value={gender}
+            onChange={handleChangeGender}
+          >
+            <FormControlLabel value="male" control={<Radio />} label="Male" />
+            <FormControlLabel value="female" control={<Radio />} label="Female" />
+          </RadioGroup>
+        </FormControl>
       </Block>
 
-      <Block title="Size" sx={style}>
-        <TextField variant={variant} fullWidth label="Size" size="small" defaultValue="Small" />
-
-        <TextField variant={variant} fullWidth label="Size" defaultValue="Normal" />
+      <Block title="Contact Details" sx={style}>
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            <TextField variant={variant} fullWidth label="Phone Number" />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField variant={variant} fullWidth label="Email" type="email" />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField variant={variant} fullWidth label="Street" />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField
+              variant={variant}
+              select
+              fullWidth
+              label="State/Province"
+              value={state}
+              onChange={handleChangeState}
+            >
+              {STATES.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item xs={6}>
+            <TextField
+              variant={variant}
+              select
+              fullWidth
+              label="Country"
+              value={country}
+              onChange={handleChangeCountry}
+            >
+              {COUNTRIES.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item xs={6}>
+            <TextField variant={variant} fullWidth label="City" />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField variant={variant} fullWidth label="Postal/ZIP Code" />
+          </Grid>
+        </Grid>
       </Block>
 
-      <Block title="Select" sx={style}>
-        <TextField
-          variant={variant}
-          select
-          fullWidth
-          label="Select"
-          value={currency}
-          onChange={handleChangeCurrency}
-          helperText="Please select your currency"
-        >
-          {CURRENCIES.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-
-        <TextField
-          variant={variant}
-          select
-          fullWidth
-          size="small"
-          value={currency}
-          label="Native select"
-          SelectProps={{ native: true }}
-          onChange={handleChangeCurrency}
-          helperText="Please select your currency"
-        >
-          {CURRENCIES.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </TextField>
-      </Block>
-
-      <Block title="Multiline" sx={style}>
-        <TextField
-          variant={variant}
-          fullWidth
-          label="Multiline"
-          multiline
-          maxRows={4}
-          value="Controlled"
-        />
-
-        <TextField
-          variant={variant}
-          fullWidth
-          multiline
-          placeholder="Placeholder"
-          label="Multiline Placeholder"
-        />
-
-        <TextField
-          variant={variant}
-          rows={4}
-          fullWidth
-          multiline
-          label="Multiline"
-          defaultValue="Default Value"
-        />
+      <Block title="Contact Details" sx={style}>
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            <TextField
+              variant={variant}
+              select
+              fullWidth
+              label="Identification Type"
+              value={idType}
+              onChange={handleChangeIdType}
+            >
+              {IDTYPES.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item xs={6}>
+            <TextField variant={variant} fullWidth label="ID Number" type="number" />
+          </Grid>
+          <Grid item xs={6}>
+            <DesktopDatePicker
+              label="Expiration Date"
+              value={value}
+              minDate={new Date('2017-01-01')}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => <TextField fullWidth {...params} margin="normal" />}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField variant={variant} fullWidth label="Postal/ZIP Code" />
+          </Grid>
+        </Grid>
       </Block>
     </Masonry>
   );

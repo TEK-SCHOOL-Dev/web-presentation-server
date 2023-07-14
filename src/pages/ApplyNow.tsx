@@ -26,6 +26,7 @@ export default function AboutPage() {
             }}
           >
             <ApplyForm />
+            
           </Box>
         </Container>
       </Box>
