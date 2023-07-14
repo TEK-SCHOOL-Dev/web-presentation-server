@@ -20,8 +20,8 @@ const navConfig = [
       {
         subheader: 'Accelerated Training Programs',
         items: [
-          { title: 'Upcoming Classes', path: PATH_PAGE.upcommingClasses },
-          { title: 'Course Catalog', path: PATH_PAGE.courseCatalog },
+          { title: 'SDET', path: PATH_PAGE.upcommingClasses },
+          { title: 'BA', path: PATH_PAGE.courseCatalog },
         ],
       },
 
