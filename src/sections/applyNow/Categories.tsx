@@ -9,55 +9,59 @@ import {
   Typography,
   ButtonBase,
 } from '@mui/material';
-import Textfields from '../_examples/mui/Textfields';
+import PersonalInformation, {
+  AcademicBackgroundForm,
+  ExpectationsAndCommitment,
+  Resources,
+} from '../_examples/mui/Textfields';
 
 const TABS = [
   {
     value: 'tab1',
     label: 'Personal info',
-    component: <Textfields variant="standard" />,
+    component: <PersonalInformation variant="outlined" />,
     icon: '/assets/icons/applynow/Personal Information.svg',
   },
   {
     value: 'tab2',
     label: 'Academic Background',
-    component: <Textfields variant="outlined" />,
+    component: <AcademicBackgroundForm variant="outlined" />,
     icon: '/assets/icons/applynow/Academic and Professional Background.svg',
   },
   {
     value: 'tab3',
     label: 'Expectations & conclusion',
-    component: <Textfields variant="filled" />,
+    component: <ExpectationsAndCommitment variant="outlined" />,
     icon: '/assets/icons/applynow/Expectations and Commitment.svg',
   },
   {
     value: 'tab4',
     label: 'Resources',
-    component: <Textfields variant="standard" />,
+    component: <Resources variant="outlined" />,
     icon: '/assets/icons/applynow/Resources.svg',
   },
   {
     value: 'tab5',
     label: 'Program Select.',
-    component: <Textfields variant="standard" />,
+    component: <PersonalInformation variant="standard" />,
     icon: '/assets/icons/applynow/Program Select.svg',
   },
   {
     value: 'tab6',
     label: 'Financial Info',
-    component: <Textfields variant="standard" />,
+    component: <PersonalInformation variant="standard" />,
     icon: '/assets/icons/applynow/Financial Information.svg',
   },
   {
     value: 'tab7',
     label: 'Additional Info',
-    component: <Textfields variant="standard" />,
+    component: <PersonalInformation variant="standard" />,
     icon: '/assets/icons/applynow/Additional Information.svg',
   },
   {
     value: 'tab8',
     label: 'Submission',
-    component: <Textfields variant="standard" />,
+    component: <PersonalInformation variant="standard" />,
     icon: '/assets/icons/applynow/Submission.svg',
   },
 ];
