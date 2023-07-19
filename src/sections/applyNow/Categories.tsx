@@ -13,6 +13,10 @@ import PersonalInformation, {
   AcademicBackgroundForm,
   ExpectationsAndCommitment,
   Resources,
+  SelectProgram,
+  FinancialInformation,
+  AdditionalInformation,
+  Submission,
 } from '../_examples/mui/Textfields';
 
 const TABS = [
@@ -43,25 +47,25 @@ const TABS = [
   {
     value: 'tab5',
     label: 'Program Select.',
-    component: <PersonalInformation variant="standard" />,
+    component: <SelectProgram variant="outlined" />,
     icon: '/assets/icons/applynow/Program Select.svg',
   },
   {
     value: 'tab6',
     label: 'Financial Info',
-    component: <PersonalInformation variant="standard" />,
+    component: <FinancialInformation variant="outlined" />,
     icon: '/assets/icons/applynow/Financial Information.svg',
   },
   {
     value: 'tab7',
     label: 'Additional Info',
-    component: <PersonalInformation variant="standard" />,
+    component: <AdditionalInformation variant="outlined" />,
     icon: '/assets/icons/applynow/Additional Information.svg',
   },
   {
     value: 'tab8',
     label: 'Submission',
-    component: <PersonalInformation variant="standard" />,
+    component: <Submission variant="outlined" />,
     icon: '/assets/icons/applynow/Submission.svg',
   },
 ];
