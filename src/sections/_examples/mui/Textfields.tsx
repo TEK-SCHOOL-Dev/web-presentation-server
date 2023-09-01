@@ -100,6 +100,12 @@ const SOURCES = [
   { value: 'Other', label: 'Other' },
 ];
 
+const GENDERS = [
+  { value: 'Male', label: 'Male' },
+  { value: 'Female', label: 'Female' },
+  { value: 'Prefer not to state', label: 'Prefer not to state' },
+];
+
 const style = {
   '& > *': { my: '8px !important' },
 };
@@ -119,7 +125,7 @@ type Props = {
 };
 
 export default function PersonalInformation({ variant }: Props) {
-  const [gender, setGender] = useState('male');
+  const [gender, setGender] = useState('Male');
   const [country, setCountry] = useState('United States');
   const [state, setState] = useState('Virginia');
   const [idType, setIdType] = useState('National ID');
@@ -162,127 +168,135 @@ export default function PersonalInformation({ variant }: Props) {
   };
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="General" sx={style}>
-        <TextField variant={variant} required fullWidth label="First Name" />
-
-        <TextField variant={variant} fullWidth label="Middle Name (optional)" />
-
-        <TextField variant={variant} required fullWidth label="Last Name" />
-
-        <DesktopDatePicker
-          label="Date of Birth"
-          value={value}
-          minDate={new Date('2017-01-01')}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={(params) => <TextField fullWidth {...params} margin="normal" />}
-        />
-
-        <FormControl component="fieldset">
-          <RadioGroup
-            row
-            aria-label="gender"
-            name="row-radio-buttons-group"
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3}>
+      <Grid container spacing={3}>
+        {/* Personal Details Fields */}
+        {/* General Fields */}
+        <Grid item xs={4}>
+          <TextField variant={variant} required fullWidth label="First Name" />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField variant={variant} fullWidth label="Middle Name (optional)" />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField variant={variant} required fullWidth label="Last Name" />
+        </Grid>
+        <Grid item xs={6}>
+          <DesktopDatePicker
+            label="Date of Birth"
+            value={value}
+            minDate={new Date('2017-01-01')}
+            onChange={(newValue) => {
+              setValue(newValue);
+            }}
+            renderInput={(params) => <TextField fullWidth {...params} />}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Gender"
             value={gender}
             onChange={handleChangeGender}
           >
-            <FormControlLabel value="male" control={<Radio />} label="Male" />
-            <FormControlLabel value="female" control={<Radio />} label="Female" />
-          </RadioGroup>
-        </FormControl>
-      </Block>
-
-      <Block title="Contact Details" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Phone Number" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Email" type="email" />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField variant={variant} fullWidth label="Street" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="State/Province"
-              value={state}
-              onChange={handleChangeState}
-            >
-              {STATES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="Country"
-              value={country}
-              onChange={handleChangeCountry}
-            >
-              {COUNTRIES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="City" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Postal/ZIP Code" />
-          </Grid>
+            {GENDERS.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
         </Grid>
-      </Block>
 
-      <Block title="Contact Details" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="Identification Type"
-              value={idType}
-              onChange={handleChangeIdType}
-            >
-              {IDTYPES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="ID Number" type="number" />
-          </Grid>
-          <Grid item xs={6}>
-            <DesktopDatePicker
-              label="Expiration Date"
-              value={value}
-              minDate={new Date('2017-01-01')}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField fullWidth {...params} />}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Postal/ZIP Code" />
-          </Grid>
+        {/* Contact Details Fields */}
+        <Grid item xs={6}>
+          <TextField variant={variant} fullWidth label="Phone Number" />
         </Grid>
-      </Block>
+        <Grid item xs={6}>
+          <TextField variant={variant} fullWidth label="Email" type="email" />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField variant={variant} fullWidth label="Street" />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="State/Province"
+            value={state}
+            onChange={handleChangeState}
+          >
+            {STATES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Country"
+            value={country}
+            onChange={handleChangeCountry}
+          >
+            {COUNTRIES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item xs={6}>
+          <TextField variant={variant} fullWidth label="City" />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField variant={variant} fullWidth label="Postal/ZIP Code" />
+        </Grid>
+
+        {/* Insert title for Identification Details */}
+        <Grid item xs={12}>
+          <Typography variant="h6" sx={{ padding: '16px 0' }}>
+            Identification Details
+          </Typography>
+        </Grid>
+
+        {/* Identification Details Fields */}
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Identification Type"
+            value={idType}
+            onChange={handleChangeIdType}
+          >
+            {IDTYPES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item xs={6}>
+          <TextField variant={variant} fullWidth label="ID Number" type="number" />
+        </Grid>
+        <Grid item xs={6}>
+          <DesktopDatePicker
+            label="Expiration Date"
+            value={value}
+            minDate={new Date('2017-01-01')}
+            onChange={(newValue) => {
+              setValue(newValue);
+            }}
+            renderInput={(params) => <TextField fullWidth {...params} />}
+          />
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }
@@ -610,75 +624,73 @@ export function SelectProgram({ variant }: Props) {
   };
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Program Selection" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="Desired Program"
-              value={program}
-              onChange={handleChangeProgram}
-            >
-              {PROGRAMS.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="Study Mode Preference"
-              value={studyMode}
-              onChange={handleChangeStudyMode}
-            >
-              {STUDY_MODES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="Preferred Campus"
-              value={campus}
-              onChange={handleChangeCampus}
-            >
-              {CAMPUSES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="Start Date"
-              value={startDate}
-              onChange={handleChangeStartDate}
-            >
-              {START_DATES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Desired Program"
+            value={program}
+            onChange={handleChangeProgram}
+          >
+            {PROGRAMS.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
         </Grid>
-      </Block>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Study Mode Preference"
+            value={studyMode}
+            onChange={handleChangeStudyMode}
+          >
+            {STUDY_MODES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Preferred Campus"
+            value={campus}
+            onChange={handleChangeCampus}
+          >
+            {CAMPUSES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="Start Date"
+            value={startDate}
+            onChange={handleChangeStartDate}
+          >
+            {START_DATES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }
@@ -779,50 +791,60 @@ export function AdditionalInformation({ variant }: Props) {
   };
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Additional Information" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Concerns"
-              value={concerns}
-              onChange={handleChangeConcerns}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <Button variant="outlined" component="label">
-              Upload Resume/CV
-              <input type="file" hidden onChange={handleUploadResume} />
-            </Button>
-          </Grid>
-          <Grid item xs={6}>
-            <Button variant="outlined" component="label">
-              Upload Transcript
-              <input type="file" hidden onChange={handleUploadTranscript} />
-            </Button>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="English Proficiency Proof"
-              value={englishProficiency}
-              onChange={handleChangeEnglishProficiency}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Any additional information to share with us?"
-              value={extraInformation}
-              onChange={handleChangeExtraInformation}
-            />
-          </Grid>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
+        <Grid item xs={6} md={6}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Concerns"
+            value={concerns}
+            onChange={handleChangeConcerns}
+          />
         </Grid>
-      </Block>
+        <Grid item xs={6} md={6}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="English Proficiency Proof"
+            value={englishProficiency}
+            onChange={handleChangeEnglishProficiency}
+          />
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <Button
+            variant="contained"
+            color="primary"
+            component="label"
+            fullWidth
+            sx={{ padding: '12px' }}
+          >
+            Upload Resume/CV
+            <input type="file" hidden onChange={handleUploadResume} />
+          </Button>
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <Button
+            variant="contained"
+            color="secondary"
+            component="label"
+            fullWidth
+            sx={{ padding: '12px' }}
+          >
+            Upload Transcript
+            <input type="file" hidden onChange={handleUploadTranscript} />
+          </Button>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Any additional information to share with us?"
+            value={extraInformation}
+            onChange={handleChangeExtraInformation}
+          />
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }
@@ -855,7 +877,6 @@ export function Submission({ variant }: Props) {
       case 'Social Media':
         setReferralLabel('Social media name');
         break;
-      // add other cases if necessary
       default:
         setReferralLabel('Not applicable');
     }
@@ -866,61 +887,58 @@ export function Submission({ variant }: Props) {
   };
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Submission" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={
-                <Checkbox checked={agreement} onChange={handleAgreementChange} name="agreement" />
-              }
-              label={
-                <Typography variant="body2">
-                  I agree to the{' '}
-                  <a style={{ color: 'inherit' }} href="/link-to-policy">
-                    Privacy Policy and Terms of Service
-                  </a>
-                </Typography>
-              }
-            />
-          </Grid>
-
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Special Accommodations/Needs"
-              value={needs}
-              onChange={handleNeedsChange}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              select
-              fullWidth
-              label="How did you learn about TEK SCHOOL?"
-              value={source}
-              onChange={handleSourceChange}
-            >
-              {SOURCES.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label={referralLabel}
-              value={referralName}
-              onChange={handleReferralNameChange}
-            />
-          </Grid>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
+        <Grid item xs={12} md={12}>
+          <FormControlLabel
+            control={
+              <Checkbox checked={agreement} onChange={handleAgreementChange} name="agreement" />
+            }
+            label={
+              <Typography variant="body2">
+                I agree to the{' '}
+                <a style={{ color: 'inherit' }} href="/link-to-policy">
+                  Privacy Policy and Terms of Service
+                </a>
+              </Typography>
+            }
+          />
         </Grid>
-      </Block>
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Special Accommodations/Needs"
+            value={needs}
+            onChange={handleNeedsChange}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant={variant}
+            select
+            fullWidth
+            label="How did you learn about TEK SCHOOL?"
+            value={source}
+            onChange={handleSourceChange}
+          >
+            {SOURCES.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label={referralLabel}
+            value={referralName}
+            onChange={handleReferralNameChange}
+          />
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }

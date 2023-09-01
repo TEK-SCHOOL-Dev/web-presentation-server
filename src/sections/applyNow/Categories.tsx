@@ -34,7 +34,7 @@ const TABS = [
   },
   {
     value: 'tab3',
-    label: 'Expectations & conclusion',
+    label: 'Expectations',
     component: <ExpectationsAndCommitment variant="outlined" />,
     icon: '/assets/icons/applynow/Expectations and Commitment.svg',
   },
@@ -46,13 +46,13 @@ const TABS = [
   },
   {
     value: 'tab5',
-    label: 'Program Select.',
+    label: 'Programs',
     component: <SelectProgram variant="outlined" />,
     icon: '/assets/icons/applynow/Program Select.svg',
   },
   {
     value: 'tab6',
-    label: 'Financial Info',
+    label: 'Financial',
     component: <FinancialInformation variant="outlined" />,
     icon: '/assets/icons/applynow/Financial Information.svg',
   },
