@@ -13,6 +13,7 @@ import {
   InputAdornment,
   FormControlLabel,
   Radio,
+  Switch,
   FormControl,
   RadioGroup,
   Grid,
@@ -516,87 +517,81 @@ export function Resources({ variant }: Props) {
   const [timeInvestment, setTimeInvestment] = useState('');
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Equipment" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              select
-              variant={variant}
-              fullWidth
-              label="Course Device"
-              value={device}
-              onChange={(event) => setDevice(event.target.value)}
-            >
-              <MenuItem value="Windows PC">Windows PC</MenuItem>
-              <MenuItem value="Mac">Mac</MenuItem>
-              <MenuItem value="Linux">Linux</MenuItem>
-              <MenuItem value="Chromebook">Chromebook</MenuItem>
-              <MenuItem value="Other">Other</MenuItem>
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={secondMonitor}
-                  onChange={(event) => setSecondMonitor(event.target.checked)}
-                />
-              }
-              label="Do you own a second monitor?"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              select
-              variant={variant}
-              fullWidth
-              label="Internet Connection Speed"
-              value={internetSpeed}
-              onChange={(event) => setInternetSpeed(event.target.value)}
-            >
-              <MenuItem value="Basic">Basic</MenuItem>
-              <MenuItem value="Average">Average</MenuItem>
-              <MenuItem value="High-Speed">High-Speed</MenuItem>
-              <MenuItem value="Unsure">Unsure</MenuItem>
-            </TextField>
-          </Grid>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
+        {/* First Row */}
+        <Grid item xs={12} md={6}>
+          <TextField
+            select
+            variant={variant}
+            fullWidth
+            label="Course Device"
+            value={device}
+            onChange={(event) => setDevice(event.target.value)}
+          >
+            <MenuItem value="Windows PC">Windows PC</MenuItem>
+            <MenuItem value="Mac">Mac</MenuItem>
+            <MenuItem value="Linux">Linux</MenuItem>
+            <MenuItem value="Chromebook">Chromebook</MenuItem>
+            <MenuItem value="Other">Other</MenuItem>
+          </TextField>
         </Grid>
-      </Block>
-      <Block title="Study Space" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={quietSpace}
-                  onChange={(event) => setQuietSpace(event.target.checked)}
-                />
-              }
-              label="Quiet space or dedicated workstation for studying?"
-            />
-          </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            select
+            variant={variant}
+            fullWidth
+            label="Internet Connection Speed"
+            value={internetSpeed}
+            onChange={(event) => setInternetSpeed(event.target.value)}
+          >
+            <MenuItem value="Basic">Basic</MenuItem>
+            <MenuItem value="Average">Average</MenuItem>
+            <MenuItem value="High-Speed">High-Speed</MenuItem>
+            <MenuItem value="Unsure">Unsure</MenuItem>
+          </TextField>
         </Grid>
-      </Block>
-      <Block title="Time Investment" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Weekly time investment for the program"
-              value={timeInvestment}
-              onChange={(event) => setTimeInvestment(event.target.value)}
-              type="number"
-              inputProps={{
-                min: 0,
-                max: 99,
-                step: 1,
-              }}
-            />
-          </Grid>
+
+        {/* Second Row */}
+        <Grid item xs={12} md={12}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Weekly time investment for the program"
+            value={timeInvestment}
+            onChange={(event) => setTimeInvestment(event.target.value)}
+            type="number"
+            inputProps={{
+              min: 0,
+              max: 99,
+              step: 1,
+            }}
+          />
         </Grid>
-      </Block>
+        {/* Third Row */}
+        <Grid item xs={12} md={12}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={secondMonitor}
+                onChange={(event) => setSecondMonitor(event.target.checked)}
+              />
+            }
+            label="Do you own a second monitor?"
+          />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={quietSpace}
+                onChange={(event) => setQuietSpace(event.target.checked)}
+              />
+            }
+            label="Quiet space or dedicated workstation for studying?"
+          />
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }
@@ -626,7 +621,7 @@ export function SelectProgram({ variant }: Props) {
   return (
     <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
       <Grid container spacing={3} sx={{ width: '100%' }}>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -642,7 +637,7 @@ export function SelectProgram({ variant }: Props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -658,7 +653,7 @@ export function SelectProgram({ variant }: Props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -674,7 +669,7 @@ export function SelectProgram({ variant }: Props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -718,47 +713,45 @@ export function FinancialInformation({ variant }: Props) {
   };
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Financial Information" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Financial Assistance Plan"
-              value={financialPlan}
-              onChange={handleChangeFinancialPlan}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6">Plan to apply for financial aid or scholarships?</Typography>
-            <FormControl component="fieldset">
-              <RadioGroup row value={financialAid} onChange={handleChangeFinancialAid}>
-                <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-                <FormControlLabel value="no" control={<Radio />} label="No" />
-              </RadioGroup>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Tuition & Fees"
-              value={tuitionFees}
-              onChange={handleChangeTuitionFees}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Guarantees"
-              value={guarantees}
-              onChange={handleChangeGuarantees}
-            />
-          </Grid>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Financial Assistance Plan"
+            value={financialPlan}
+            onChange={handleChangeFinancialPlan}
+          />
         </Grid>
-      </Block>
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Tuition & Fees"
+            value={tuitionFees}
+            onChange={handleChangeTuitionFees}
+          />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Guarantees"
+            value={guarantees}
+            onChange={handleChangeGuarantees}
+          />
+        </Grid>
+        <Grid item xs={12} sx={{ paddingTop: '16px', paddingBottom: '16px' }}>
+          <Typography variant="h6">Plan to apply for financial aid or scholarships?</Typography>
+          <FormControl component="fieldset">
+            <RadioGroup row value={financialAid} onChange={handleChangeFinancialAid}>
+              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="no" control={<Radio />} label="No" />
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }
@@ -793,7 +786,7 @@ export function AdditionalInformation({ variant }: Props) {
   return (
     <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
       <Grid container spacing={3} sx={{ width: '100%' }}>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             fullWidth
@@ -802,7 +795,7 @@ export function AdditionalInformation({ variant }: Props) {
             onChange={handleChangeConcerns}
           />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             fullWidth
@@ -811,7 +804,7 @@ export function AdditionalInformation({ variant }: Props) {
             onChange={handleChangeEnglishProficiency}
           />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <Button
             variant="contained"
             color="primary"
@@ -823,7 +816,7 @@ export function AdditionalInformation({ variant }: Props) {
             <input type="file" hidden onChange={handleUploadResume} />
           </Button>
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <Button
             variant="contained"
             color="secondary"
@@ -889,21 +882,6 @@ export function Submission({ variant }: Props) {
   return (
     <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
       <Grid container spacing={3} sx={{ width: '100%' }}>
-        <Grid item xs={12} md={12}>
-          <FormControlLabel
-            control={
-              <Checkbox checked={agreement} onChange={handleAgreementChange} name="agreement" />
-            }
-            label={
-              <Typography variant="body2">
-                I agree to the{' '}
-                <a style={{ color: 'inherit' }} href="/link-to-policy">
-                  Privacy Policy and Terms of Service
-                </a>
-              </Typography>
-            }
-          />
-        </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
@@ -936,6 +914,21 @@ export function Submission({ variant }: Props) {
             label={referralLabel}
             value={referralName}
             onChange={handleReferralNameChange}
+          />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <FormControlLabel
+            control={
+              <Checkbox checked={agreement} onChange={handleAgreementChange} name="agreement" />
+            }
+            label={
+              <Typography variant="body2">
+                I agree to the{' '}
+                <a style={{ color: 'inherit' }} href="/link-to-policy">
+                  Privacy Policy and Terms of Service
+                </a>
+              </Typography>
+            }
           />
         </Grid>
       </Grid>
