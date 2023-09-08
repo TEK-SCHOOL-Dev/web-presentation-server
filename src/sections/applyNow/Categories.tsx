@@ -9,6 +9,7 @@ import {
   Typography,
   ButtonBase,
 } from '@mui/material';
+import Slider from 'react-slick';
 import PersonalInformation, {
   AcademicBackgroundForm,
   ExpectationsAndCommitment,
@@ -72,9 +73,94 @@ const TABS = [
 
 export default function MUITextFieldPage() {
   const [currentTab, setCurrentTab] = useState('tab1');
-
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  // Slider settings
+  const sliderSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+  };
+
+  const renderTabs = () =>
+    TABS.map((tab) => (
+      <Box
+        key={tab.value}
+        onClick={() => setCurrentTab(tab.value)}
+        sx={{
+          flex: '1 1 0',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: tab.value === currentTab ? 1 : 0.5,
+          '&:hover': {
+            opacity: 1,
+            transform: 'scale(1.02)',
+          },
+          transition: 'all 0.2s ease-in-out',
+          margin: theme.spacing(1),
+          height: '100%',
+        }}
+      >
+        <ButtonBase
+          component="div"
+          sx={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Paper
+            variant="outlined"
+            sx={{
+              px: 3,
+              py: isMobile ? 2 : 5,
+              borderRadius: 2,
+              textAlign: 'center',
+              width: '100%',
+              maxWidth: 250,
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <img
+              src={tab.icon}
+              alt={tab.label}
+              style={{
+                width: isMobile ? 48 : 60,
+                height: isMobile ? 48 : 60,
+                marginBottom: '1rem',
+              }}
+            />
+            <Typography
+              variant="subtitle2"
+              style={{
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                WebkitLineClamp: 2,
+                lineHeight: '1.2rem',
+                fontSize: '0.9rem',
+                minHeight: '2.4rem',
+              }}
+            >
+              {tab.label}
+            </Typography>
+          </Paper>
+        </ButtonBase>
+      </Box>
+    ));
 
   return (
     <>
@@ -83,93 +169,25 @@ export default function MUITextFieldPage() {
       </Helmet>
 
       <Container sx={{ my: 10 }}>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            flexWrap: 'nowrap',
-            mb: 5,
-            overflowX: 'auto',
-            scrollbarWidth: 'none',
-            '&::-webkit-scrollbar': {
-              display: 'none',
-            },
-          }}
-        >
-          {TABS.map((tab) => (
+        <Box sx={{ mb: 5 }}>
+          {isMobile ? (
+            <Slider {...sliderSettings}>{renderTabs()}</Slider>
+          ) : (
             <Box
-              key={tab.value}
-              onClick={() => setCurrentTab(tab.value)}
               sx={{
-                flex: '1 1 0',
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                opacity: tab.value === currentTab ? 1 : 0.5,
-                '&:hover': {
-                  opacity: 1,
-                  transform: 'scale(1.02)',
+                justifyContent: 'space-around',
+                flexWrap: 'nowrap',
+                overflowX: 'auto',
+                scrollbarWidth: 'none',
+                '&::-webkit-scrollbar': {
+                  display: 'none',
                 },
-                transition: 'all 0.2s ease-in-out',
-                margin: theme.spacing(1),
-                height: '100%',
               }}
             >
-              <ButtonBase
-                component="div"
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Paper
-                  variant="outlined"
-                  sx={{
-                    px: 3,
-                    py: isMobile ? 2 : 5,
-                    borderRadius: 2,
-                    textAlign: 'center',
-                    width: '100%',
-                    maxWidth: 250,
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <img
-                    src={tab.icon}
-                    alt={tab.label}
-                    style={{
-                      width: isMobile ? 48 : 60,
-                      height: isMobile ? 48 : 60,
-                      marginBottom: '1rem',
-                    }}
-                  />
-                  <Typography
-                    variant="subtitle2"
-                    style={{
-                      display: '-webkit-box',
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden',
-                      WebkitLineClamp: 2,
-                      lineHeight: '1.2rem',
-                      fontSize: '0.9rem',
-                      minHeight: '2.4rem',
-                    }}
-                  >
-                    {tab.label}
-                  </Typography>
-                </Paper>
-              </ButtonBase>
+              {renderTabs()}
             </Box>
-          ))}
+          )}
         </Box>
 
         <form noValidate autoComplete="off">
