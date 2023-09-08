@@ -42,9 +42,9 @@ const STATES = [
 ];
 
 const marks = [
-  { value: 0, label: 'Beginner' },
-  { value: 1, label: 'Intermediate' },
-  { value: 2, label: 'Advanced' },
+  { value: 0, label: 'Beg' },
+  { value: 1, label: 'Int' },
+  { value: 2, label: 'Adv' },
 ];
 
 const COUNTRIES = [
@@ -173,16 +173,16 @@ export default function PersonalInformation({ variant }: Props) {
       <Grid container spacing={3}>
         {/* Personal Details Fields */}
         {/* General Fields */}
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <TextField variant={variant} required fullWidth label="First Name" />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <TextField variant={variant} fullWidth label="Middle Name (optional)" />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <TextField variant={variant} required fullWidth label="Last Name" />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <DesktopDatePicker
             label="Date of Birth"
             value={value}
@@ -193,7 +193,7 @@ export default function PersonalInformation({ variant }: Props) {
             renderInput={(params) => <TextField fullWidth {...params} />}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -211,16 +211,16 @@ export default function PersonalInformation({ variant }: Props) {
         </Grid>
 
         {/* Contact Details Fields */}
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField variant={variant} fullWidth label="Phone Number" />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField variant={variant} fullWidth label="Email" type="email" />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={12}>
           <TextField variant={variant} fullWidth label="Street" />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -236,7 +236,7 @@ export default function PersonalInformation({ variant }: Props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -252,22 +252,22 @@ export default function PersonalInformation({ variant }: Props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField variant={variant} fullWidth label="City" />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField variant={variant} fullWidth label="Postal/ZIP Code" />
         </Grid>
 
         {/* Insert title for Identification Details */}
-        <Grid item xs={12}>
+        <Grid item xs={12} md={12}>
           <Typography variant="h6" sx={{ padding: '16px 0' }}>
             Identification Details
           </Typography>
         </Grid>
 
         {/* Identification Details Fields */}
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             variant={variant}
             select
@@ -283,10 +283,10 @@ export default function PersonalInformation({ variant }: Props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <TextField variant={variant} fullWidth label="ID Number" type="number" />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <DesktopDatePicker
             label="Expiration Date"
             value={value}
@@ -317,66 +317,11 @@ export function AcademicBackgroundForm({ variant }: Props) {
   };
 
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Relevant Knowledge" sx={style}>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3}>
+      <Block title="Education, Relevant Knowledge & Experience" sx={style}>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Typography variant="h6">
-              1. Do you have prior experience in the chosen program field?
-            </Typography>
-            <RadioGroup
-              value={fieldExperience}
-              onChange={(event) => setFieldExperience(event.target.value)}
-            >
-              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-              <FormControlLabel value="no" control={<Radio />} label="No" />
-            </RadioGroup>
-            {fieldExperience === 'yes' && (
-              <Box mt={2}>
-                <TextField fullWidth label="Please describe briefly" />
-              </Box>
-            )}
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6">
-              2. Do you have specific topics or concepts within the program of interest?
-            </Typography>
-            <RadioGroup
-              value={programInterest}
-              onChange={(event) => setProgramInterest(event.target.value)}
-            >
-              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-              <FormControlLabel value="no" control={<Radio />} label="No" />
-            </RadioGroup>
-            {programInterest === 'yes' && (
-              <Box mt={2}>
-                <TextField fullWidth label="Please describe briefly" />
-              </Box>
-            )}
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6">
-              3. Have you attended past relevant courses or workshops?
-            </Typography>
-            <RadioGroup
-              value={attendedCourses}
-              onChange={(event) => setAttendedCourses(event.target.value)}
-            >
-              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-              <FormControlLabel value="no" control={<Radio />} label="No" />
-            </RadioGroup>
-            {attendedCourses === 'yes' && (
-              <Box mt={2}>
-                <TextField fullWidth label="Please describe briefly (optional)" />
-              </Box>
-            )}
-          </Grid>
-        </Grid>
-      </Block>
-
-      <Block title="Education" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
+          {/* Education */}
+          <Grid item xs={12} md={6}>
             <TextField
               variant={variant}
               select
@@ -393,13 +338,15 @@ export function AcademicBackgroundForm({ variant }: Props) {
             </TextField>
           </Grid>
 
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Filed of Study (optional)" />
+          <Grid item xs={12} md={6}>
+            <TextField variant={variant} fullWidth label="Field of Study (optional)" />
           </Grid>
-          <Grid item xs={6}>
+
+          <Grid item xs={12} md={6}>
             <TextField variant={variant} fullWidth label="Institution Name (optional)" />
           </Grid>
-          <Grid item xs={6}>
+
+          <Grid item xs={12} md={6}>
             <DesktopDatePicker
               label="Graduation Date"
               value={value}
@@ -410,7 +357,7 @@ export function AcademicBackgroundForm({ variant }: Props) {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={12} md={4} sx={{ pr: 2 }}>
             <Typography variant="h6" sx={{ mt: 2 }}>
               Reading
             </Typography>
@@ -424,7 +371,8 @@ export function AcademicBackgroundForm({ variant }: Props) {
               max={2}
             />
           </Grid>
-          <Grid item xs={12}>
+
+          <Grid item xs={12} md={4} sx={{ px: 1 }}>
             <Typography variant="h6" sx={{ mt: 2 }}>
               Writing
             </Typography>
@@ -438,7 +386,8 @@ export function AcademicBackgroundForm({ variant }: Props) {
               max={2}
             />
           </Grid>
-          <Grid item xs={12}>
+
+          <Grid item xs={12} md={4} sx={{ pl: 2 }}>
             <Typography variant="h6" sx={{ mt: 2 }}>
               Speaking
             </Typography>
@@ -452,18 +401,72 @@ export function AcademicBackgroundForm({ variant }: Props) {
               max={2}
             />
           </Grid>
-        </Grid>
-      </Block>
 
-      <Block title="Experience " sx={style}>
-        <Grid container spacing={3}>
-          <TextField
-            variant={variant}
-            rows={4}
-            fullWidth
-            multiline
-            label="Brief Professional Experience Summary "
-          />
+          {/* Relevant Knowledge */}
+          <Grid item xs={12} md={6}>
+            <Typography variant="h6">
+              1. Do you have prior experience in the chosen program field?
+            </Typography>
+            <RadioGroup
+              value={fieldExperience}
+              onChange={(event) => setFieldExperience(event.target.value)}
+            >
+              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="no" control={<Radio />} label="No" />
+            </RadioGroup>
+            {fieldExperience === 'yes' && (
+              <Box mt={2}>
+                <TextField fullWidth label="Please describe briefly" />
+              </Box>
+            )}
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Typography variant="h6">
+              2. Have you attended past relevant courses or workshops?
+            </Typography>
+            <RadioGroup
+              value={attendedCourses}
+              onChange={(event) => setAttendedCourses(event.target.value)}
+            >
+              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="no" control={<Radio />} label="No" />
+            </RadioGroup>
+            {attendedCourses === 'yes' && (
+              <Box mt={2}>
+                <TextField fullWidth label="Please describe briefly (optional)" />
+              </Box>
+            )}
+          </Grid>
+
+          <Grid item xs={12} md={12}>
+            <Typography variant="h6">
+              3. Do you have specific topics or concepts within the program of interest?
+            </Typography>
+            <RadioGroup
+              value={programInterest}
+              onChange={(event) => setProgramInterest(event.target.value)}
+            >
+              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="no" control={<Radio />} label="No" />
+            </RadioGroup>
+            {programInterest === 'yes' && (
+              <Box mt={2}>
+                <TextField fullWidth label="Please describe briefly" />
+              </Box>
+            )}
+          </Grid>
+
+          {/* Experience */}
+          <Grid item xs={12}>
+            <TextField
+              variant={variant}
+              rows={4}
+              fullWidth
+              multiline
+              label="Brief Professional Experience Summary"
+            />
+          </Grid>
         </Grid>
       </Block>
     </Masonry>
@@ -472,39 +475,31 @@ export function AcademicBackgroundForm({ variant }: Props) {
 
 export function ExpectationsAndCommitment({ variant }: Props) {
   return (
-    <Masonry columns={{ xs: 1, md: 2 }} spacing={3}>
-      <Block title="Program Expectations" sx={style}>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Program expectations" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              variant={variant}
-              fullWidth
-              label="Weekly study hours "
-              type="number"
-              inputProps={{
-                min: 0,
-                max: 99,
-                step: 1,
-              }}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField variant={variant} fullWidth label="Program goals" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              variant={variant}
-              rows={4}
-              fullWidth
-              multiline
-              label="Study Plan and Method"
-            />
-          </Grid>
+    <Masonry columns={{ xs: 1, md: 1 }} spacing={3} sx={{ width: '100%' }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
+        <Grid item xs={12} md={6}>
+          <TextField variant={variant} fullWidth label="Program expectations" />
         </Grid>
-      </Block>
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant={variant}
+            fullWidth
+            label="Weekly study hours "
+            type="number"
+            inputProps={{
+              min: 0,
+              max: 99,
+              step: 1,
+            }}
+          />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <TextField variant={variant} fullWidth label="Program goals" />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <TextField variant={variant} rows={4} fullWidth multiline label="Study Plan and Method" />
+        </Grid>
+      </Grid>
     </Masonry>
   );
 }
