@@ -318,7 +318,6 @@ export function AcademicBackgroundForm({ variant }: Props) {
 
   return (
     <Masonry columns={{ xs: 1, md: 1 }} spacing={3}>
-      <Block title="Education, Relevant Knowledge & Experience" sx={style}>
         <Grid container spacing={3}>
           {/* Education */}
           <Grid item xs={12} md={6}>
@@ -468,7 +467,6 @@ export function AcademicBackgroundForm({ variant }: Props) {
             />
           </Grid>
         </Grid>
-      </Block>
     </Masonry>
   );
 }
